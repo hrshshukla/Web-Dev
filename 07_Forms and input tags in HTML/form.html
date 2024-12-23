@@ -1,0 +1,67 @@
+<!DOCTYPE html><!--
+ form actions :
+    -- <form action="post">  Used to send large data in server : to send PASSWORD
+    -- <form action="get">   It has limits So, it is Used to send small data in server as 
+ 
+Label tag
+,
+Input tag
+ -- type="text" /number /email /password /url 
+ -- type="button" /button /checkbox /radio
+ -- type="submit" /submit /reset 
+ -- /autofocus /placeholder /required
+ -- /textarea tag /select tag : option value [dropdown]
+
+ EXTRA :
+ -- type="time" /month /time /week /datetime /datetime-local
+ -- type="file" /file /image 
+ -- type="other" /color /hidden /range /tel
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="post">
+
+        <!--#Text tag : To Input Normal Text-->
+        <div>
+            <label for="username">Username :</label>
+            <input type="text" id="username" placeholder="enter your usename" autofocus>
+        </div>
+        
+        <!--#Radio tag: To choose One Options-->
+        <div>
+            <input type="radio" id="male" name="gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label> 
+        </div>
+        
+        <!-- #CheckBox tag: To choose Multiple Options -->
+        <div> 
+            <input type="checkbox" id="newslater">
+            <label for="newslater">Subscribe to newslater</label>
+        </div>
+        
+        <!-- #TextArea tag : To take Input a block of text : comment or feedback-->
+         <div>
+            <label for="comment">Enter Comment : </label>
+            <textarea id="comment" name="comment" placeholder="Enter your comments here"></textarea>
+         </div>
+
+         <!-- #Select tag : Select One Options + Dropdown -->
+         <div>
+            <label for="fruits">Favourite Fruit :</label>
+            <select name="fruits" id="fruits">
+                <option value="apple">Apple</option>
+                <option value="Orange">Orange</option>
+                <option value="Banana">Banana</option>
+            </select>
+         </div>
+
+    </form>
+</body>
+</html>

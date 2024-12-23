@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- 
+--- > table tag     -> <table></table>
+--- > table header  -> <thead></table>
+--- > table foorter -> <tfoot></tfoot>
+
+rowspan & colspan in -> <td></td> 
+----------- captions -> <captions></captions>
+
+-->
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="01_Table.css">
+</head>
+<body>
+    <table border="2">
+        <caption>Student Data</caption> <!-- caption tag--> 
+
+        <th>Name</th>
+        <th>Age</th>
+        <th>Blood</th>
+        <th>House</th>
+
+        <tr>
+            <td>Harsh</td>
+            <td rowspan="2">19</td>
+            <td>Muggle Bond</td>
+            <td>Jasmine</td>
+        </tr>
+
+        
+        <tr>
+            <td>Harry Potter</td>
+            <td rowspan="2">Heirs</td>
+            <td> Gryffindor</td>
+        </tr>
+
+        <tr>
+            <td>Tom Marvolo Riddle</td>
+            <td>21</td>
+            <td>Slytherin</td>
+        </tr>
+
+        <tr>
+            <td>Harsh</td>
+            <td>19</td>
+            <td>Slytherin</td>
+        </tr>
+
+    </table>
+</body>
+</html>

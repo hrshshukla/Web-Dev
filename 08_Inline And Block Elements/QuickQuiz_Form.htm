@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="post">
+        <!-- Username -->
+        <div>
+            <label for="username">Enter Username : </label>
+            <input type="text" id="username" autofocus>
+        </div>
+
+        <!-- Email -->
+        <div>
+            <label for="email">Enter Email : </label>
+            <input type="email" name="" id="email" autocomplete="additional-name">
+        </div>
+
+        <!-- DOB -->
+         <div>
+            <label for="dob">Enter DOB : </label>
+            <input type="datetime-local" name="" id="">
+         </div> 
+
+        <!-- Resume -->
+        <div>
+            <label for="resume">Upload your Resume</label>
+            <input type="file" id="resume">
+        </div>
+        
+        <!-- City-->
+        <div>
+            <label for="city">Select City : </label>
+            <select id="city" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                <option value="nangpur" selected >Nagpur</option> <!-- Using #selected so that default value = Nagpur-->
+                <option value="Raipur" >Raipur</option>
+                <option value="Mumbai" >Mumbai</option>
+            </select>
+        </div>
+        
+        <!-- Pincode-->
+        <div>
+            <label for="pincode">Enter pincode : </label>
+            <input type="number" id="pincode">
+        </div>
+
+        <!-- Terms & Condition -->
+         <div>
+            <input type="checkbox" name="" id="Terms">
+            <label for="Terms">Terms & Condition</label>
+         </div>
+
+         <!-- Submit & Reset -->
+          <div>
+            <input type="submit" id="Submit">
+            <input type="reset" name="" id="reset">
+          </div>
+        
+        
+    </form>
+</body>
+</html>
