@@ -9,14 +9,36 @@ What are Classes?
 --  That way, you can easily change their look or behavior all at once. 
 --  Classes are not unique and can be assigned to multiple elements.
 --  They are generally used for applying the same styles or behaviors to a group of elements.
--->
+
+SYNTAX: 
+
+(+) To give multiple classes we use [space] between them 
+->> <h1 class="class1 class2"> <-- Now  <h1> belongs to two classes i.e. class1 and class2
+
+    -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Id & Classes</title>
+
+    <style>
+        .fontRED{ /* We use (.) DOT for class in CSS */
+            color: rgb(255, 0, 0);
+        }
+
+        #firstDiv{ /* And (#) HASH for ID in CSS */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .bgYellow{
+            background-color: #ffd70d;
+        }
+
+    </style>
 </head>
 <body>
-    
+    <div id="firstDiv" class="fontRED bgYellow">First Div</div> <!-- Assigned (2 classes) to <div> -->
+    <div id="secondDiv" class="divTeam blockElements">Second Div</div>
 </body>
 </html>
