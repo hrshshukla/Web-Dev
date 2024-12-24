@@ -1,0 +1,25 @@
+<!DOCTYPE html><!--
+
+Attributes for <audio> Tag
+ (+) src: Specifies the path to the audio file.
+ (+) controls: Adds audio controls, like play, pause, and volume.
+ (+) autoplay: Automatically starts playing.
+ (+) loop: Repeats the audio once it ends.
+ (+) muted: Mutes the audio by default.
+
+ (+) preload: Specifies if and how the audio should be loaded ('auto', 'metadata', 'none').
+     The "preload" attribute can have the following values:
+    (>) none: This is the default value. It indicates that the browser should not preload the audio file at all. The audio file will only start downloading when the user initiates playback.
+    (>) metadata: This value tells the browser to preload only the metadata of the audio file, such as its duration and basic information about the audio. This can be useful if you want to display the audio duration to the user without fully loading the audio data.
+    (>) auto: This value instructs the browser to preload the entire audio file as much as possible without delaying the loading of other important page content. The browser will try to load the audio file in the background so that it's ready to play when the user decides to start it.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Tag</title>
+</head>
+<body>
+    <audio src="Audio.mp3" c ontrols ></audio> <!-- controls /loop /muted /autoplay /pause -->
+</body>
+</html>

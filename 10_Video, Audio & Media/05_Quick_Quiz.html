@@ -1,0 +1,52 @@
+<!-- Quick Quiz -->
+<!-- Create a website which shows videos of different category and audios of different categories.
+You can use YouTube videos in an iframe using YouTube's embedding feature -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Quiz</title>
+    <style>
+        .ChildDiv{
+            align-content: center;
+            border: 2px;
+            border-color: gray;
+            border-radius: 20px;
+            color: aliceblue;
+            height: auto;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        h1{
+            font-size: 100%;
+            font-weight: 100;
+            font-style: normal;
+            text-align: justify;
+         }
+        #mainDiv{
+            background-color: black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainDiv">
+        <div id="div1" class="ChildDiv">
+            <iframe src="https://www.youtube-nocookie.com/embed/XZwBNDGuWGU?si=fSWDXDzk4nnXaMt4&amp;start=749" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" " allowfullscreen></iframe>
+            <h1>Attitude | Stand-up Comedy by Ravi GuptA</h1>
+        </div>
+
+        <div id="div2" class="ChildDiv">
+            <iframe 
+             src="https://www.youtube-nocookie.com/embed/XZwBNDGuWGU?si=fSWDXDzk4nnXaMt4&amp;start=749" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h1>Controlling Blender with my voice using LLM</h1>
+        </div>
+
+        <div id="div3" class="ChildDiv">
+            <iframe 
+             src="https://www.youtube-nocookie.com/embed/XZwBNDGuWGU?si=fSWDXDzk4nnXaMt4&amp;start=749" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <h1>Sigma Web Development Course - Web Development Tutorials in Hindi 🗿</h1>
+        </div>
+    </div>
+</body>
+</html>

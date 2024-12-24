@@ -1,0 +1,97 @@
+<!DOCTYPE html><!-- 
+Ways to use SVG 
+ (+) Internal :
+        (>)     <svg height="200" width="200" >
+                    <circle cx="120" cy="100" r="60" fill="blue" stroke="black" stroke-width="2" />
+                </svg>
+
+ (+) External :
+        (>) IMPORTANT (Name Space Declaration):  xmlns="http://www.w3.org/2000/svg"
+        (>) IMPORTANT -- "Never Put Comments on .svg file"
+        (>) <svg height="200" width="200" xmlns="http://www.w3.org/2000/svg" >
+                <circle cx="120" cy="100" r="60" fill="blue" stroke="black" stroke-width="2" />
+            </svg> 
+
+ (+) Shapes In SVG : Diagrams in (Svg.svg) File
+     (>) Circle 
+     (>) Rectangle
+     (>) Line
+     (>) Text
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media -> SVG</title>
+</head>
+<body>
+    <!-- Internal Linking -->
+    <svg height="200" width="200" >
+        <circle cx="120" cy="100" r="60" fill="blue" stroke="black" stroke-width="2" />
+    </svg>
+
+    <!-- External Linking -->
+    <img src="media.svg" alt="SVG File">
+    
+    <!-- Shapes In SVG -->
+     <svg >
+        <!-- (1) Draw a circle -->
+        <circle cx="100" cy="100" r="50" fill="blue" stroke="black" stroke-width="2" />
+        <!-- (2) Draw a rectangle -->
+        <rect x="10" y="10" width="50" height="50" fill="green" stroke="black" stroke-width="2" />
+        <!-- (3) Draw a line -->
+        <line x1="0" y1="0" x2="200" y2="200" stroke="red" stroke-width="2" />
+        <!-- (4) Add some text -->
+        <text x="50" y="150" font-family="Arial" font-size="20" fill="purple">Hello, SVG!</text>
+    </svg>
+</body>
+</html>
+
+
+<!-- More about shapes
+ ___________________________________________________
+    
+               _____CIRCLE_____
+                   
+
+                   (cy="100")
+                        ▲
+                        │
+          r="50"        ●        r="50"
+     ◀-----------------○------------------▶
+       (Left)      (cx="100")       (Right)
+                        │
+                        ▼
+                   (Bottom edge)
+___________________________________________________
+
+
+               _____RECTANGLE_____
+
+ x="10"         <-width="50"->              
+     +----------------------------------+
+     |                                  | height="50"
+     |                                  |
+     +----------------------------------+
+  y="10"
+
+_______________________________________________________
+
+                _____LINE_____
+x1="0", y1="0"                 
+     (Start) ●---------------------● (End)
+                               x2="200", y2="200"
+
+________________________________________________________
+
+                ____TEXT_____
+
+    x="50", y="150"
+     Hello, SVG!
+       ^^^^^^^^
+
+   font-family="Arial"
+   font-size="20"
+      fill="purple"
+
+-->
