@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- 
+What is CSS Box Model?
+-- It describes the structure of an element as a rectangular box 
+   which contains content, padding, a border, and a margin.
+
+-- Four main Components :
+    (+) Content :  innermost component of the box model is actual content of the element.
+    (+) Padding :  The space between content and the border of the element is the padding.
+    (+) Border  :  the visual outline of the element is called border
+    (+) Margin  :  It is the space outside the element that separates it from other elements. 
+
+
+------------------------------------------
+|                Margin                  |  
+|   ---------------------------------    |
+|   |          Border Layer         |    |
+|   |   -------------------------   |    |
+|   |   |        Padding        |   |    |
+|   |   |   -----------------   |   |    |
+|   |   |   |    Content    |   |   |    |
+|   |   |   |               |   |   |    |
+|   |   |   -----------------   |   |    |
+|   |   |                       |   |    |
+|   |   -------------------------   |    |
+|   ---------------------------------    |
+|                                        |
+------------------------------------------
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin, Padding & Borders</title>
+    <style>
+        .box{
+            background-color: rgb(95, 0, 0);
+        }
+
+        .box1{
+            color: rgb(255, 242, 0);
+            margin: 15px;
+            border: 10px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"><strong>I m Box 1</strong></div>
+    <div class="box box2">I m Box 2</div>
+</body>
+</html>

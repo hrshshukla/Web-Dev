@@ -1,0 +1,111 @@
+<!DOCTYPE html><!-- 
+What are Selectors?
+-- Selectors allow us to choose specific elements
+   and apply styles to them. 
+
+Types
+(+) element selectors
+(+) id selectors
+(+) class selectors
+(+) child selectors -- direct child only
+(+) descedent selectors -- 
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <style>
+        /* Element Selector */
+        div{
+            background: #00ff80;
+        }
+        
+        /* Class Selector */
+        .bgblue{
+            background-color: rgb(0, 110, 255);
+        }
+        
+        /* ID Selector */
+        #bgyellow{
+            background-color: yellow;
+        }
+        
+        /* Child Selector --> Only Direct Child*/
+        div > span{
+            background-color: #ff0000;
+        }
+        
+        /* Descedent Selector --> All Childs Inside*/
+        div p {
+            background-color: rgb(67, 175, 0);
+        }
+
+        /* Universal Selector */
+        *{
+            margin: 5%;
+        }
+
+        /* Pseudo Selectors */
+        a:visited{
+            color: #ff0000;
+        }
+        
+        a:link{
+            color: #00ff80;
+        }
+
+        a:active{
+            background-color: rgb(0, 225, 255);
+        }
+
+        a:hover{
+            background: black;
+        }
+
+        /* Target those <p> tags who are the first-child of there parent tag */
+        p:first-child{
+            background-color: rgb(0, 162, 255);
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Element Selector  -->
+    <div>hello!! I m booked for Element Selector</div>
+    
+    <!-- Class Selector -->
+    <div class="bgblue"> I m booked for Class selectors</div>
+    
+    <!-- ID Selector -->
+    <div id="bgyellow">I m booked for ID selectors</div>
+    
+    <!-- Child Selector -->
+    <div>
+        I m main div of (child selectors)
+        <span>Hello I m child span</span>
+    </div>
+
+    <!-- First Child -->
+     <main>
+        <p>I am the first child</p>
+        <p>I am the second child</p>
+        <p>I am the third child</p>
+        <p>I am the fourth child</p>
+     </main>
+    
+    <!-- descedent selectors -->
+    <div class="nothing">
+        I m main div of (descedent selector) 
+        <article>
+            I m article inside div-> article
+            <p> I m paragraph inside div->article->paragraph</p>
+        </article>
+    </div>
+    
+    <!-- Pseudo Selectors  -->
+    <a href="https://www.google.com" target="_blank">Open Google</a>
+    
+</body>
+</html>
