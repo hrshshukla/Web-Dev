@@ -1,0 +1,60 @@
+<!DOCTYPE html><!--
+Using "@import" to use font without downloading it. Paste inside -- style 
+-- @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap');
+
+Also importing font through <link>. Paste inside <head>
+--  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+
+Font Attributes :
+ (+) line-height
+ (+) letter-spacing
+ (+) text-transform
+ (+) text-decoration-color
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts & Text</title>
+
+    <!-- Using <link>  to use font without downloading-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+
+    <style> 
+        /* Using @import */
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap');
+
+        p {
+            font-family: "Baloo Da 2", serif; /* copied from website */
+            font-style: italic; /* /oblique /italic /normal */
+            font-weight: bold;
+            text-decoration: underline;
+            text-transform: capitalize; /* Makes first letter capital */
+            text-decoration-color: blueviolet; /* color the underline */
+            text-decoration-thickness: 5px; /* thickness of underline  */
+            text-indent: 10px; /* [space : 10px] text */
+
+            /* When Text needs space more then alloted */
+            text-overflow: ellipsis;
+            overflow: hidden;  /*Output : lorem... */
+            word-break: break-all; /* breaks the text exceeding width*/
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <h1>Fonts</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ut dolorem laudantium accusantium excepturi ipsam tenetur optio voluptate. Tempora, nostrum!</p>
+    </div>
+</body>
+
+</html>
