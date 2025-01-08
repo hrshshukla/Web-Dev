@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- 
+    box-shadow: 10px 10px 10px 10px black; --- this is default set to outset shadow 
+    box-shadow: 10px 10px 10px 10px black inset; --- write "inset" to inset shadow 
+    padding : top-bottom left-right
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0px;
+            background-color: rgb(221, 221, 221);
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+        
+        .card {
+            justify-items: center;
+            margin: auto;
+            margin-top: 10%;
+            height: 690px;
+            width: 400px;
+            border: 2px rgb(180, 180, 180) solid;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0px 10px 10px 10px rgb(198, 198, 198);
+        }
+
+        .image {
+            background: #ffffff;
+            margin: 10px;
+        }
+        
+        img {
+            width: 380px;
+            margin: 0px;
+            border-radius: 15px;
+        }
+
+        .text {
+            margin-top: 15px;
+            background-color: rgb(255, 255, 255);
+            align-items: normal;
+            line-height: 25px;
+        }
+        
+        .capsule {
+            padding: 2px 8px; /* padding : top-bottom left-right */
+            border: 2px rgb(206, 206, 206) solid;
+            color: rgb(133, 133, 133);
+            border-radius: 50px;
+            font-weight: bold;
+        }
+
+        p {
+            color: rgb(133, 133, 133);
+        }
+
+        .readmore {
+            align-content: center;
+            text-align: center;
+            width: 150px;
+            height: auto;
+            margin: auto;
+            padding: 15px;
+            background: rgb(223, 239, 248);
+            color: rgb(0, 160, 253);
+            border-radius: 40px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="image"><img src="image.jpg" alt="image"></div>
+        <div class="text">
+            <span class="capsule text">Nature</span>
+            <span class="capsule text ">Lake</span>
+
+            <h1 class="text">Lorem, ipsum dolor.</h1>
+            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. In blanditiis, similique voluptate consequuntur
+                laborum atque dolor minima. Atque eum ut est a iusto!</p>
+            <div class="readmore text">Read More</div>
+        </div>
+    </div>
+</body>
+
+</html>

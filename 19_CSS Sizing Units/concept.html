@@ -1,0 +1,158 @@
+<!DOCTYPE html><!--
+ (>) Short-Cuts
+ (>) Properties like : /vh-vw /em 
+ (>) Inheritance In CSS
+
+#Concept :
+-- vh & vw : "v" means viewport. It works on the size of (brower screen)
+             if size of (brower screen) changes = viewport changes = height and width changes
+
+-- percentage % : "%" works on screen size remains constant every time 
+
+-- em : "element" the font-size given using "em" is linked with font-size of parent element
+        if parent element = 20px then 1em = 20px and 2em = 40px respectively.
+
+-- rem : "root element" the font-size given using "rem" is linked with font-size of root element = <html>
+        if root element = 20px then 1rem = 20px and 2rem = 40px respectively.
+
+-- vmin & vmax : "vmin" means "viewport minimum" in PCs minimum viewport is height and in mobiles "vmin" is width
+                 "vmax" means "viewport maximum" in PCs maximum viewport is width and in mobiles "vmax" is height
+                 So, In pc -> width : 100vmin; means width = 100vh; -- the 100vh height will be calculated and assigned to width  
+                 So, In mobiles -> width : 100vmin; means width = 100vw; -- the 100vw width will be calculated and assigned to height 
+
+#Short-Cuts
+  (+) div.class1 =>  <div class="class1"></div>
+  (+) div#ID1  =>  <div id="ID1"></div>
+
+#Learning:
+  (+) margin : vertical horizontal;
+  (+) [html] is a root element
+
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizing Unit</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box{
+            background: #ff0000;
+            border: 2px #000000 solid ; 
+
+            /* Height & Width */
+            width: 80vw;   /* width: 1920px; ---> Not Recommended*/
+            height: 10vh; /*  height: 1080px; ---> Not Recommended */
+            
+            margin: auto;  /* only block level elmnts can centred with "auto" */
+            }
+ 
+        .container{
+            background: #ff0000;
+            border: 2px #000000 solid ; 
+            width: 80vw;  
+            height: 10vh;
+            margin: 23px auto; /* margin : vertical horizontal */ 
+
+        }
+
+        
+        /* Using "em" */
+        .block{font-size: 16px; margin: 20px;}
+        .block p{
+         /* font-size: 1em; ---> same as parent class = 16px*/
+            font-size: 1.5em; /* 1.5em = 150% x 16px = 24px */
+            
+        }
+
+        /* Using "rem" */
+        html{ font-size: 10px;} /* root element */
+        .block2{
+            font-size: 2rem; /* here, 1 rem = 10px then, 2rem = 20px */
+            margin: 20px;
+        }
+
+        /* Using min-height & width */
+        .block3{
+            min-height: 100px; /* Height from 100px -  ထ */
+            min-width: 10px;  /* Width from 10px -  ထ */
+
+            background-color: #ff0000;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        /* Using percentage "%" to set height & width*/
+        .block4{
+            width: 1000px;
+            
+            height: 200px;
+            background-color: #00b7ff;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
+
+        /* ATTENTION!! : only use % to set height & width of child if h&w of parent is already set */
+        .block4 div{
+            height: 50%; /* means 50% width of parent. here, (200px /2) = 100px  */
+            width: 50%; /* means 50% width of parent. here, (1000px /2) = 500px  */
+
+            border: 2px white solid;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Using "vh & wh" -->
+    <div class="box">
+        I am a Box
+    </div>
+
+    <div class="container">
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid placeat consectetur obcaecati tempore molestiae non perferendis quae architecto, sapiente atque!
+    </div>
+
+    <!-- Inheritance in CSS -->
+     <div>
+        I am parent div <!-- Here, fontsize = 10px (inerited from root element <html>)  -->
+        <div>
+            I am child div 
+        . My font size is inherited from (parent div)<!-- Here, fontsize = 10px (inherterd from parent div) -->
+        </div>
+     </div>
+ 
+
+    <!-- Using "em" -->
+    <div class="block"> 
+        Hello I am parent of (paragraph) <!-- here fontsize = 16px  -->
+        <p>I am paragraph using "em" </p> <!-- here, (fontsize = 1.5em) => (150% x 16px) => 24px -->
+    </div>
+
+    <!-- Using rem -->
+     <div class="block2">
+         My font-size = font-size of root element using "rem"
+     </div>
+    
+    <!-- Using min-width & min-height -->
+    <div class="block3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quisquam, et aperiam delectus cum odit laboriosam dignissimos rerum quasi reiciendis distinctio amet consequuntur. Repudiandae quam veniam facilis fugiat quis illum impedit sequi nisi sunt dicta inventore, maiores aperiam, magni dolorum?
+    </div>
+
+    <!-- Using percentage % -->
+     <div class="block4" >
+        I am parent 
+        <div>
+            I am child taking 50% width of my parent 
+            <div>
+                I am grand child taking 50% width of my parent 
+            </div>
+        </div>
+     </div>
+</body>
+</html>

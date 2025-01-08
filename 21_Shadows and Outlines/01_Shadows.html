@@ -1,0 +1,87 @@
+<!DOCTYPE html><!--
+#Working Syntax: 
+    (+) box-shadow: h-offset v-offset blur spread color inset;
+        -> box-shadow: 5px 5px 15px 5px #888888; 
+
+    (+) text-shadow: h-offset v-offset blur color;
+        -> text-shadow: 2px 1px 10px #0015ff; 
+
+    (+) outline: width style color;
+        ->  outline: 2px solid black;
+
+
++-------------------------------+----------------------------------+
+|           OUTLINE             |             BORDER               |
++-------------------------------+----------------------------------+
+| (+) Not part of box-model     | (+) Part of box-model            |
+|                               |                                  |
+| (+) Does not take space       | (+) Takes up space               |
+|                               |                                  |
+| (+) Drawn outside the border  | (+) Drawn inside the box-model   |
+|                               |                                  |
+| (+) Supports offset           | (+) Does not support offset      |
+|                               |                                  |
+| (+) Does not have its own     | (+) Supports `border-radius` to  |
+|     radius property, but      |     make rounded corners         |
+|     follows `border-radius`   |                                  |
++-------------------------------+----------------------------------+
+
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadows</title>
+
+    <style>
+        *{
+            padding: 10px;
+        }
+        /* Using box-shadow */
+        .box{
+            box-shadow: 5px 5px 5px 10px rgb(0, 145, 255) ;
+            
+            background-color: rgb(0, 195, 255);
+            border: 2px black solid;
+            border-radius: 20px;
+            padding: 34px;
+        } 
+
+        /* Using text-shadow */
+        .text{
+            text-shadow: 2px 1px 10px #0015ff;
+            
+            border: 2px black solid;
+            border-radius: 20px;
+            padding: 34px;
+        }
+
+        /* Using Outline */
+        .outline{
+            outline: 5px solid rgb(0, 200, 255);
+            outline-offset: 10px; /* --> to increase distance between element and outline */
+               
+            border: 2px black solid;
+            border-radius: 20px;
+            padding: 34px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Box Shadow -->
+    <div class="box">
+        I am representing shadow box
+    </div>
+
+    <!-- Text Shadow -->
+    <p class="text">
+        I am representing text
+    </p>
+    
+    <!-- Outline -->
+    <p class="outline">
+        I am representing outline
+    </p>
+</body>
+</html>

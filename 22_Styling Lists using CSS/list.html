@@ -1,0 +1,46 @@
+<!DOCTYPE html><!--
+#List 
+    (+) display : list-item;
+    (+) Marker in the list is outside part of the list.
+        To take marker inside the list we use -- list-style-position: inside;
+
+    #Short-Hand Property : list-style: inside "🤔";
+    
+    #Individual Property : list-style-position: inside;  
+                           list-style-type: "🤔";   
+
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+
+    <style>
+        div ul li{
+            /* list-style: none; --> to remove marker from the list */
+
+            list-style: lower-alpha; /* marker :: a b c .. */
+            list-style-position: inside; /* marker gets inside the list */
+            list-style-type: "🤔" ; /* marker :: 🤔 🤔 🤔 .. */
+            list-style-image: url("https://picsum.photos/200/300"); /* marker:: image */
+            
+            /* Short-Hand Approach */
+            list-style: inside "🤔" ; /* Using --> /position /type in one attribute */
+
+            background-color: rgb(0, 186, 0);
+            border: 2px black solid;
+        }   
+    </style>
+</head>
+<body>
+     <div>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+     </div>
+</body>
+</html>

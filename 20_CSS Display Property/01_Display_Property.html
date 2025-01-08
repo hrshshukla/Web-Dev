@@ -1,0 +1,66 @@
+<!DOCTYPE html><!-- 
+# Display-Properties:
+-- If an element is block or inline, that is defined by it's display value. 
+   Means, if default value is -> {display : block} --(it's a block element) 
+    
+   (+) Block Element :
+        (>) example : div{ display: block; } here, it means that <div> is a block element
+
+   (+) Inline Element :
+        (>) example : span{ display: inline; } here, it means that <span> is a inline element
+
+   (+) display: none; -- removes the box + space 
+   (+) visibility: hidden; -- removes the box, but space will remain there
+   (+) display : /inline /block /inline-block /flex /grid
+
+   
+   (+) In-depth : https://developer.mozilla.org/en-US/docs/Web/CSS/display
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scal
+    e=1.0">
+    <title>Display</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* block element --> inline element */
+        .box{
+            display: inline; /* this type of conversion inline elements didn't support top-(padding and margin)  */
+
+            padding: 45px; /* will not show top-padding */
+            margin: 10px; /* will not show top-margin */
+
+            width: 80vw; /* Brower : The display: inline property prevents width from having an effect. */
+
+            background-color: skyblue;
+            border: 2px black solid ;
+            
+        }
+
+        /* block element --> inline-block element --> Means, act like Inline but also follows properties of block element */
+        .box1{
+            display: inline-block; /* will show top-margin, a block elements does */
+            padding: 45px;
+            margin-top: 100px;
+
+            width: 80vw;
+            background-color: rgb(0, 183, 255);
+            border: 2px black solid ;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">I am block element converted into inline through -> <strong> display: inline;</strong></div><br>
+    
+    <div class="box1">I am also block element converted into inline through -> <strong>display: inline-block; </strong></div>
+    <span>I am a inline element</span>
+</body>
+</html> 
