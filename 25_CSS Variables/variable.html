@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <style>
+
+        /* Global variable */
+        :root{
+            --color: rgb(125, 0, 48);
+            --second-color :  rgba(139, 0, 53, 0.658);
+
+            --defaultpadding: 20px;
+        }
+        
+        .nav{ background-color: var(--color); }
+         
+        .body{ background-color: var(--second-color); } 
+
+        
+        /* Local Variable */
+        ul li:first-child{ 
+            --color: rgb(0, 117, 117); /* Now { --color } is a local variable inside this block */
+            background-color: var(--color);
+
+            background-color: var(--color,skyblue); /* In case if variable {--color} not found. Then, skyblue will apply automatically */
+        }
+        
+        ul li{  
+            margin: 10px 30px;
+            padding: var(--defaultpadding); /* Using variable */
+            list-style: none;
+         }
+
+        ul{ display: flex; }
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Home</li>
+            <li>Contact</li>
+            <li>About</li>
+        </ul>
+    </div>
+
+    <div class="body">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel et iure modi ducimus. Error inventore officiis sed repellat animi tempore dolore dignissimos aliquam!
+    </div>
+
+</body>
+</html>

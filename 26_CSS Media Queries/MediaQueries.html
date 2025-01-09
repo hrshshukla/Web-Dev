@@ -1,0 +1,61 @@
+<!DOCTYPE html><!-- 
+    Media Queries : Media Queries are used when we want to customize our website's presentation according to the user's screen size. 
+
+     @media only screen and (min-width: 400px) ---- minimum 400px hona chiye usse kam nhi 
+     @media only screen and (max-width: 400px) ---- maximum 400px honi chiye usse jada nhi 
+     -->
+     
+     
+     <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+
+        
+        @media only screen and (max-width : 400px)  /* maximum 400px, usse jada nhi chiye */
+    /*  @media only screen and (min-width: 400px) ---- minimum 400px, usse jada bhi chalega  */
+        {
+             body{ background-color: skyblue; }
+            .boxes{ flex-direction: column-reverse; }
+        }
+/* _____________________________________________________________________________________________________ */
+        
+        @media only screen and (orientation : landscape)  /* Only apply if screen is landsacpe means ---> width > height   */
+    /*  @media only screen and (orientation : portrait)       Only apply if screen is potrait means --->  height > width   */
+        {
+            .box{
+                border: 10px solid black ;
+            }
+        }
+
+        /* ______________________________________________________________________________________________ */
+
+        body{
+            background-color: rgb(100, 0, 0);
+        }
+
+        .boxes{
+            display: flex;
+        }
+
+        .box{
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+            background: rgb(255, 1, 1);
+            
+        }
+          
+    </style>
+</head>
+<body>
+     <div>hello sir</div>
+     <div class="boxes">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+     </div>
+</body>
+</html>
