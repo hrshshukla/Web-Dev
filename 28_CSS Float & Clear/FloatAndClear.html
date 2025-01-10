@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float & Clear</title>
+    <style>
+        .maincard
+        {
+            border: 2px black solid;
+            display: flow-root; /* pereventing overflow of image to display outside of (maincard)  */
+        }
+
+        img{
+            float: right; /* image will fix at right and allow content to display in left 
+            float: left;
+            float: none;                                                                */
+        }
+
+        .card{
+            border: 2px skyblue solid;
+        }
+
+        .card:nth-child(3) /* card jaha pe 3rd child hai waha ye style apply krdo */
+        {    
+            clear: right; /* will not allow image to display at it's right side But it will allow at left side 
+            clear: left ; ---> will not allow to display at left but allow to display at right 
+            clear: both; ---> neither  at right nor at left */
+
+            background-color: rgba(255, 0, 111, 0.236);
+        }
+    </style>
+</head>
+<body>
+    <div class="maincard">
+        <img src="img.jpg" width="200" alt="">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut a perferendis eaque numquam, eligendi perspiciatis atque cumque incidunt esse, nesciunt nobis quasi. Voluptates?</p>
+        </div>
+        <div class="card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, ut?</div>
+        <div class="card"></div>
+    </div>
+</body>
+</html>
