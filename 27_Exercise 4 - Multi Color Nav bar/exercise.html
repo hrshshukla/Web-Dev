@@ -1,55 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi Color Nav Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+15&display=swap" rel="stylesheet">
+
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
 
-        :root{
+        :root {
             --bg-color: black;
             --color: rgb(138, 138, 138);
-            
-            --sec-bgcolor:var(--color);
+
+            --sec-bgcolor: var(--color);
             --sec-color: var(--bg-color);
         }
 
-        nav{
+        nav {
             background-color: var(--bg-color);
-            height: 200px ;
-            color:var(--color);
+            height: 200px;
+            width: 100vw;
+            color: var(--color);
         }
 
-        nav:hover{
+        nav:hover {
             background-color: var(--sec-bgcolor);
             color: var(--sec-color);
         }
-        ul li{
+
+        ul li {
             list-style: none;
             padding: 100px 200px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Jersey 15", serif;
             font-size: 20px;
             font-weight: bold;
         }
 
-        ul{
+        ul {
             display: flex;
             justify-content: center;
         }
-
     </style>
 </head>
+
 <body>
-    <nav class="navbar">
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
 </body>
+
 </html>

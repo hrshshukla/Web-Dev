@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Exercise 5 - Design this Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            align-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+
+        nav {
+            position: sticky;
+            height: 50px;
+            width: 100%;
+            top: 0;
+            background-color: rgb(0, 162, 255);
+        }
+
+        main *{
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+        }
+
+        .main {
+            height: 800px;
+            width: 90%; 
+            margin: 30px auto; /* margin: t&b l&r */
+            display: flex;
+            background-color: greenyellow;
+        }
+
+        .first,
+        .second {
+            margin: 20px;
+            padding: 10px;
+            height: 700px;
+            width: 700px;
+        }
+
+        .first {
+            background-color: rgb(255, 0, 0);
+        }
+
+        .second {
+            background-color: rgb(255, 247, 0);
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        ul li {
+            list-style-type: none;
+            padding: 20px 20px;
+        }
+
+        .curve {
+            margin: 50px auto;
+            width: 700px;
+            height: 100px;
+            border-radius: 20px;
+            color: black;
+            background-color: rgb(0, 221, 255);
+        }
+
+        img {
+            position: fixed;
+            bottom: 10%;
+            right: 1%;
+            height: 100px;
+            width: 100px;
+            border-radius: 100%;
+        }
+
+
+        footer {
+            background-color: rgb(0, 204, 255);
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="main">
+            <div class="first">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis ex optio libero
+                praesentium laboriosam, voluptate, doloribus laudantium ab, recusandae beatae assumenda. Odit
+                exercitationem et harum voluptate dolore odio fugiat quidem mollitia vel autem cupiditate dicta, dolorem
+                minima. Blanditiis, accusantium placeat?</div>
+            <div class="second">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis ex optio libero
+                praesentium laboriosam, voluptate, doloribus laudantium ab, recusandae beatae assumenda. Odit
+                exercitationem et harum voluptate dolore odio fugiat quidem mollitia vel autem cupiditate dicta, dolorem
+                minima. Blanditiis, accusantium placeat? lorem80</div>
+        </div>
+
+        <div class="curve">Welcome to this Sigma Web
+            Development Express</div>
+        <img src="img.jpg" alt="nothing">
+    </main>
+    <footer>
+        <div>footer &copy; harsh </div>
+    </footer>
+</body>
+
+</html>

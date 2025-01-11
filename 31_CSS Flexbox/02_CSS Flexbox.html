@@ -1,0 +1,99 @@
+<!DOCTYPE html><!-- 
+--  align-items: center; 
+--  align-content: center;
+
+-- There is no justify-items in flexbox 
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox</title>
+    <style>
+        .container{
+            display: flex;
+
+            flex-direction: row; /* can be "row" OR "column"                                                            */
+            flex-wrap: wrap; /* helps to manage overflow                                                                */
+            flex-flow: row wrap;                                                                                        /*
+            flex-flow: <'flex-direction'> <'flex-wrap'>                                                                 */
+
+            align-items: center;
+            justify-content: center;                                                                                     /*  
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: normal;
+            justify-content: right;
+            justify-content: left;
+            justify-content: space-around; --> space between all blocks 
+            justify-content: space-between; --> space between all blocks except first and last                          */
+
+            row-gap: 20px; /* gap between lines increases to 50px                                                       */
+            column-gap: 10px; /* gap between blocks increases to 50px                                                   */
+            gap: 20px 10px;                                                                                             /* 
+            gap: row-gap column-gap;                                                                                    */
+
+            height: 200px;
+            width: 90vw;
+            border: 2px red solid;
+        }
+
+        .items{                                                                                     /* 
+            flex-grow: 0; --> default value                                              */
+            flex-grow: 1; /* Means all items will take equal width inside the box */
+
+            height: 50px;
+            width: 50px;
+            background-color: rgb(255, 238, 0);
+            border: 2px black solid;
+        }                                                                                                                 /* 
+
+
+        order : 0; ---> default  value                                                                                              */
+        .order3{
+            order:-1; /* this value is less then all orders value. So, it will appear first */
+        }
+
+        .order4{
+            order:-2; /* Now, this will appear first                                                    */
+        }
+        
+        .item1{
+            order: -3; /* Now, Block-1 will appear first                                                            */
+            flex-grow: 2; /* And, Block-1 will take width of 2 blocks   
+            flex-shrink: 2; ---> The ability of item to compress-width when screen width is compressed                  
+
+                                                                                                                                 
+            align-self: ; ---> to change position of one individual item 
+                                                                                  */
+            align-self: flex-end; /* REMOVE: align-content                  */
+
+        }
+
+        .item2{
+            align-self: flex-start;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items item1">1</div>
+        <div class="items item2">2</div>
+        <div class="items order3">3</div>
+        <div class="items order4">4</div>
+        <div class="items order5">5</div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+    </div>
+</body>
+</html>

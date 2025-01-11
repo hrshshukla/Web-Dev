@@ -4,8 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>More on CSS Selectors</title>
+    <style>
+
+        /* Inseritng element dynamically through css */
+        .boxes::before{
+            content: "I am showing effect of .boxes::before";
+            color: white;
+            background-color: black;
+        }
+
+        .boxes::after{
+            content: "I am showing effect of .boxes::after";
+            color: white;
+            background-color: black;
+        }
+
+        /* Decides what will happen when you select the text */
+        .box1::selection /* Only Apply to box1 
+        ::selection --> Apply on all */
+        {
+            color:rgb(0, 98, 255);
+            background-color: rgb(13, 255, 0);
+        }
+        .boxes *{
+            padding: 10px;
+            border: 3px black solid;
+            font-size: 20px;
+        }
+
+        .box1::first-line /* Only first line of box1 will be red  
+        .box1::first-letter                                         */
+        {
+            background-color: red;
+        }
+
+        /* Attribute Selectors */
+        [data-color="primary"]{
+            border: 5px black dashed;
+        }
+
+        /* Child Selectors */
+        div:nth-child(even){
+            background-color: rgb(0, 247, 255);
+            font-weight: bold;
+        }
+
+        div:nth-child(odd){
+            background-color: rgb(255, 238, 0);
+        }
+
+        div:nth-last-child(1){
+            background-color: rgb(60, 0, 255);
+        }
+
+        input::placeholder{
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(255, 0, 0);
+        }
+
+    </style>
 </head>
 <body>
-     
+     <div class="boxes">
+        <!-- To show -- box1:first-line -->
+        <div class="box1">I am box1's first line and I am showing the effect of >>> .box1::first-line ___ Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora commodi, voluptates voluptatibus, nesciunt debitis ipsum dicta cum quis possimus voluptas sed iusto quaerat at vel a vero soluta fuga ex harum. Iusto nesciunt voluptates dicta. Id eum autem ex dolorum pariatur nostrum. ratione recusandae.</div>
+
+         <!-- Attribute Selector -- [data-color : primary]   && div:nth-child(even)  -->
+         <div data-color="primary" class="box2">I am Box2 showing the effect of > > > [data-color : primary]   && div:nth-child(even) </div>
+         
+         <!-- div:nth-child(odd) -->
+         <div class="box3">I am Box3 showing the effect of > > > div:nth-child(odd)</div> 
+         
+         <!-- div:nth-child(even)  -->
+         <div class="box4">I am Box4 showing the effect of > > > div:nth-child(even) </div> 
+
+         <!-- To show --  div:nth-child(odd)-->
+         <div class="box5">I am Box5 showing the effect of > > > div:nth-child(odd)</div> 
+         
+         <!-- To show -- div:nth-last-child(1)  &&  div:nth-child(odd)-->
+         <div class="box6">I am Box6 showing the effect of > > >  div:nth-last-child(1) && div:nth-child(even)</div> 
+
+        <!-- Changing placeholder -->
+         <label for=""> Effect of >> input::placeholder</label>
+         <input type="text" placeholder="Enter Here ">
+     </div>
 </body>
 </html>
