@@ -1,0 +1,126 @@
+<!DOCTYPE html><!-- 
+Transform Properties :
+
+(1) rotate :
+  ---  transform: rotate();
+  ---  transform: rotateX('angle');
+  ---  transform: rotateY('angle');
+  ---  transform: rotateZ('angle');
+
+
+& turn
+-- translate
+-- scale
+
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            color: white;
+            
+        }
+        
+        .container{
+            display: flex;
+            height: 250px;
+            width: 80vw;
+            border: 2px solid black;
+            margin: 10px;
+            justify-content: center;
+        }
+        
+        .box{                                                                                                            /*  
+            transform: rotate(45deg);                                                                                    
+            transform: rotate(0.25turn); ---> 0.25 = 25% of 360* = 90*
+            
+            #Short-Hand
+            transform: translateX(50%) skew(40deg) rotate(90deg);                                                           
+
+            transform-origin: 50% 50%; ---> main-point = 50%(x-axis) 50%(y-axis); ----> lies at center ---> default */
+            transform-origin: 0% 0%; /* main-point = 0%(x-axis) 0%(y-axis); ----> lies at right-top ---> default */
+            
+            border: 2px greenyellow solid;
+            height: 150px;
+            width: 150px;
+            margin: 40px;
+            background: #005481;
+            text-align: center;
+            align-content: center;
+        }
+
+        .box:hover .rotateX{
+            transform: rotateX(45deg);   
+        }
+
+        .rotateY{
+            transform: rotateY(45deg);      }
+            
+        .rotateZ{
+            transform: rotateZ(45deg);      }                                                                       /* 
+
+        --Scale--                                                                                                      */
+        .scaleX{
+            transform: scaleX(1.5);      }
+
+        .scaleY{
+            transform: scaleY(1.5);      }
+
+        .scaleZ{
+            transform: scaleZ(1.5);  /* Makes No-Sense */     }
+
+
+
+        .translateX{
+            transform: translate(50%);      }
+
+        .translateY{
+            transform: translateY(50%);      }
+
+        
+        .translateZ{
+            transform: translateZ(50%); /* Makes No-Sense */   }
+        
+        
+        .skewX{
+            transform: skewX(10deg);
+        }
+        .skewY{
+            transform: skewY(10deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">box</div>
+        <div class="box rotateX">rotateX</div>
+        <div class="box rotateY">rotateY</div>
+        <div class="box rotateZ">rotateZ</div>
+    </div>
+    <div class="container">
+        <div class="box">box</div>
+        <div class="box scaleX">scaleX</div>
+        <div class="box scaleY">scaleY</div>
+        <div class="box scaleZ">scaleZ</div>
+    </div>
+    <div class="container">
+        <div class="box">box</div>
+        <div class="box translateX">translateX</div>
+        <div class="box translateY">translateY</div>
+        <div class="box translateZ">translateZ</div>
+    </div>
+    <div class="container">
+        <div class="box skewX">skew X <br> (diagonal-stretch) </div>
+        <div class="box skewY">skew Y <br> (diagonal-stretch) </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid-2</title>
+    <style>
+        *{
+            align-content: center;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            
+            grid-template-areas: "nav nav nav"
+                                 "aside article article"
+                                 "footer footer footer";
+
+            background-color: grey;
+            border: 2px black solid;
+        }
+
+
+        .items{
+            border: 2px black solid;
+            background-color: rgb(0, 170, 255);
+            height: 55px;
+        }
+
+        .item1{
+            grid-area: nav; /* Now, item1 will take space of all three-blocks "nav nav nav"                             */
+            background-color: red;
+        }
+        
+        .item2{
+            grid-area: aside; /* It will only take 1 block "aside article article"                                   */
+            background-color: aqua;
+        }
+        
+        .item3{
+            grid-area: article; /* It will take 2 blocks "aside article article"                                     */
+            background-color: darkorange;
+        }
+        
+        .item4{
+            grid-area: footer; /* It will take 3 blocks "footer footer footer"                                      */
+            background-color: lightgreen;
+        }                                                                                                                           /*
+
+        Overlapping [item5] above [nav] using : grid-area                                              */
+        .item5{
+            grid-area: nav; /* Now [item5] is overlapped with [nav]                                              */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="items item1">nav</div>
+        <div class="items item2">aside</div>
+        <div class="items item3">article</div>
+        <div class="items item4">footer</div>
+        <div class="items item5">item5 : I am overlapped</div>
+
+    </div>
+</body>
+
+</html>

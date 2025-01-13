@@ -1,0 +1,56 @@
+<!DOCTYPE html><!-- 
+-- Try not use (padding) in flex-box or Grid instead use : Gap
+    
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid-1</title>
+
+    <style>
+        .container{
+            display: grid; /* align the blocks in grid manner                                                */
+
+            grid-template-columns:[Col-FristLine] 100px [Col-ScndLine] 120px [Col-ThirdLine]; /* two vertical (straight) partition will be created                                                 */
+            grid-template-rows: [row-first] 100px  [row-scnd] 100px  [row-third]100px; /* three horizontal (flat) partition will be created                                                 */
+
+
+            background-color: grey;
+            border: 2px black solid;
+        }
+
+
+        .items{
+            border: 2px black solid;
+            background-color: rgb(0, 170, 255);
+            height: 55px;
+            width: 55px;
+        }
+
+        /* Overlapping [block-4] with [block-1]                                                                 */
+        .overlapping{                                                                                                       /*  
+            grid-row-start: 1;
+            grid-row-end: 2;                                                                            */
+            grid-row: 1/2; /*  grid-row-start: 1; [+] grid-row-end: 2;                                       */
+
+            grid-column: 1/2; /*  grid-column-start: 1; [+] grid-column-end: 2;                                                                   */
+            grid-column: Col-FristLine/Col-ScndLine ; /* =  grid-column: 1/2;                                                               */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items overlapping">1</div>
+        <div class="items overlapping">2</div>
+        <div class="items">3</div>
+        <div class="items ">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+        <div class="items">7</div>
+        <div class="items">8</div>
+    </div>
+</body>
+</html>

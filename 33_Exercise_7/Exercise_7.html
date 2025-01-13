@@ -1,0 +1,67 @@
+<!DOCTYPE html><!-- 
+Use :
+-- gap 
+-- flex-grow : to expand the box width
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6 - Navbar using Flexbox</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+        }
+        
+        nav{
+            height: 100px;
+            width: 100%;
+        }
+        
+        ul{
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            color: black;
+            display: flex;
+            gap: 40px;
+        }
+
+        a{
+            text-decoration: none;
+        }
+        
+        .logo{
+            height: 60px;
+            margin-right: 300px;
+        }
+
+        .small-icon{
+            height: 20px;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img class="logo" src="logo.png" alt="none"></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">For Business</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Our Company</a></li>
+                <li><img class="small-icon" src="translate.png" alt="none"></li>
+                <li><img class="small-icon" src="search.png" alt="none"></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
