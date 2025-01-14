@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design the Grid</title>
+
+    <style>
+        @media only screen and (max-width :1000px) {
+            .block2 .grid {
+                grid-template-columns: 300px;
+            }
+
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+            justify-content: center;
+        }
+
+        /*
+
+         Header                                                                                                       */
+        nav {
+            height: 150px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .right ul {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+            color: black;
+        }
+
+        .right ul li {
+            display: flex;
+        }
+
+        .left {
+            height: 60px;
+        }
+
+        .small-icon {
+            height: 20px;
+        }
+
+        main * {
+            place-content: center;
+        }
+
+        .block1 {
+            display: grid;
+            grid-template-rows: [row-1]100px [row-2]100px [row-3]100px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .block1 .row1 {
+            font-size: 60px;
+        }
+
+        .block1 .row2 {
+            font-size: 30px;
+        }
+
+        .block1 .button {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(0, 200, 255);
+            border-radius: 10px;
+            width: 400px;
+            height: 50px;
+            margin: auto;
+            text-decoration: none;
+        }
+
+        .block2 {
+            display: grid;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            row-gap: 30px;
+        }
+
+        .block2 .head {
+            display: flex;
+            font-size: 30px;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .block2 .head img {
+            height: 90px;
+            border: 2px solid black;
+            border-radius: 100%;
+            margin: 0px 50px;
+        }
+
+        .block2 .grid {
+            display: grid;
+            width: 90vw;
+            grid-template-rows: [row-1]200px [row-2]200px [row-3]200px;
+            grid-template-columns: 300px 300px 300px;
+            gap: 20px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-areas:
+                "block1 block2 block3"
+                "block4 block5 block6"
+                "block7 block8 block9"
+                "block10 block11 block12";
+        }
+
+        .block2 .grid * {
+            background-color: rgb(247, 247, 247);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .grid .button {
+            background-color: rgb(0, 179, 39);
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            height: 30px;
+            padding: 10px;
+            width: 180px;
+            margin: auto;
+            text-decoration: none;
+        }
+
+        .grid .txt {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .box .description {
+            font-size: 10px;
+        }
+
+        .box1 {
+            grid-area: block1;
+        }
+
+        .box2 {
+            grid-area: block2;
+        }
+
+        .box3 {
+            grid-area: block3;
+        }
+
+        .box4 {
+            grid-area: block4;
+        }
+
+        .box5 {
+            grid-area: block5;
+        }
+
+        .box6 {
+            grid-area: block6;
+        }
+
+        .box7 {
+            grid-area: block7;
+        }
+
+        .box8 {
+            grid-area: block8;
+        }
+
+        .box9 {
+            grid-area: block9;
+        }
+
+        .box10 {
+            grid-area: block10;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <img src="logo.png" alt="none">
+            </div>
+            <div class="right">
+                <ul>
+                    <li><span>Products</span> <img src="arrow.svg" alt="none"> </li>
+                    <li><span>For business</span> <img src="arrow.svg" alt="none"> </li>
+                    <li><span>Resources</span> <img src="arrow.svg" alt="none"> </li>
+                    <li><span>Support</span> <img src="arrow.svg" alt="none"> </li>
+                    <li><span>Our Company</span> <img src="arrow.svg" alt="none"> </li>
+                    <li><img class="small-icon" src="translate.png" alt="none"></li>
+                    <li><img class="small-icon" src="search.png" alt="none"></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <!-- Block 1 -->
+            <div class="block1">
+                <span class="row1"> Download <strong>UltraEdit</strong> for Windows</span>
+                <span class="row2"> Download and try UltraEdit before you buy it! This download includes the full
+                    Windows version of the text editor.</span>
+                <a class="button" href="https://www.ultraedit.com/downloads/uex-thank-you/">Download Mac or Linux
+                    version</a>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="block2">
+                <!-- Head -->
+                <div class="head">
+                    <img src="main_logo.png" alt="none">
+                    <span>Download UltraEdit v2024.2 (released 2024-12-20) | Hotfix information </span>
+                </div>
+
+                <!-- Body -->
+                <div class="grid">
+                    <div class="box box1">
+                        <div class="txt">English</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box2">
+                        <div class="txt">Deutsch</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box3">
+                        <div class="txt">Italiano</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box4">
+                        <div class="txt">Español</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box5">
+                        <div class="txt">français</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box6">
+                        <div class="txt">Português brasileiro</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box7">
+                        <div class="txt">日本</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box8">
+                        <div class="txt">한국어</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box9">
+                        <div class="txt">中國</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+
+                    <div class="box box10">
+                        <div class="txt">中國</div>
+                        <a class="button" href="Vpn.exe">Download 64-bit</a>
+                        <div class="description">SHA256 A2AD125E35EAD75C3B0BA8612</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </main>
+        </nav>
+    </header>
+</body>
+
+</html>

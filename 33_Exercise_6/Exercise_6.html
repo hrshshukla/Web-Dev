@@ -1,0 +1,70 @@
+<!DOCTYPE html><!-- 
+Use :
+-- gap 
+-- flex-grow : to expand the box width
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6 - Navbar using Flexbox</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(255, 255, 255);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+        }
+        
+        nav{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        
+        .right ul{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+            color: black;
+        }
+        
+        .right ul li{
+            display: flex;
+        }
+        .logo{
+            height: 60px;
+        }
+
+        .small-icon{
+            height: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img class="logo" src="logo.png" alt="none">
+            </div>
+            <div class="right">
+                <ul>
+                    <li><span>Products</span>       <img class="svg" src="arrow.svg" alt="none"></li>
+                    <li><span>For Business</span>   <img class="svg" src="arrow.svg" alt="none"></li>
+                    <li><span>Resources</span>      <img class="svg" src="arrow.svg" alt="none"></li>
+                    <li><span>Support</span>        <img class="svg" src="arrow.svg" alt="none"></li>
+                    <li><span>Our Company</span></li>
+                    <li><img class="small-icon" src="translate.png" alt="none"></li>
+                    <li><img class="small-icon" src="search.png" alt="none"></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
