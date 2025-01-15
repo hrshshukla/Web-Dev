@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- 11:50 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations </title>
+
+    <style>
+        *{margin: 0; padding: 0;}
+        .container{
+            height: 50vh;
+            width: 80vw;
+            background-color: grey;
+        }
+
+        .box{
+            height: 10vh;
+            width: 10vw;
+            background-color: rgb(72, 255, 0);                                                                                                                                                                               /*
+            animation: boxAnime; -----> Name of Animation                                                                                                                                
+            animation-duration: 2s;-----> Duration of Animation                                                                                                                                                         
+            animation-timing-function: ease-in-out;-----> Type of Animation                                                                                                              
+            animation-iteration-count: 5; -----> Number of times animation should play                                                                                                                                                                                              
+            animation-delay:1s ; -----> Animation will start after 1 second                                                                                                                                                  
+
+            animation-direction: reverse;-----> Animation will start from opposite direction                                                                                                          
+            animation-direction: alternate-reverse; -----> Animation will start from opposite direction then real direction and then opposite .....
+
+            animation-play-state: paused; This can pause the animation in the middle of its path  
+
+            Only type "ani" to get --->  animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode];                                                                                */
+            animation: boxAnime 2s ease-in-out 1s infinite alternate-reverse;                                                                                                                                                                        /* 
+            
+
+            animation-fill-mode                                                                                                                                                              */
+            animation-fill-mode: forwards; /* Box will retain the final property                                                                                                 */
+            animation: boxAnime 2s ease-in-out 1 forwards; /* Now box will move from starting point with color [red] and stop at final point with color [aqua]                             */
+            
+            animation-fill-mode: backwards; /* Box will retain the intial property                                                                                                 */
+            animation: boxAnime 2s ease-in-out 1 backwards; /* Now box will move from starting point with color [red] and stop at final point with color [aqua] then come back to intial point with color [green]                           
+            
+            Applying Multiple Animations                                                                                                                                                                                                                                     */
+            animation: boxAnime 2s ease-in-out 2s infinite,
+                       boxAnime2 2s ease-in-out 2s 1;
+             
+        }
+
+        @keyframes boxAnime {
+            from{
+                background-color: red;
+            }
+            to{
+                transform: translateX(50vw) translateY(20vh);
+                background-color: aquamarine;
+            }
+        }
+
+        @keyframes boxAnime2 {
+            0%{
+                transform: rotate(0deg);
+            }
+            20%{
+                transform: rotate(20deg);
+            }
+            40%{
+                transform: rotate(40deg);
+            }
+            60%{
+                transform: rotate(60deg);
+            }
+            80%{
+                transform: rotate(80deg);
+            }
+            100%{
+                transform: rotate(100deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+      <div class="container">
+        <div class="box"></div>
+      </div>
+</body>
+</html>
