@@ -1,0 +1,71 @@
+<!-- 11:30 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Object-fit and Object-cover </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            width: 500px;
+            height: 500px;
+            /* background-color: rgb(203, 255, 238); */
+
+            background-image: url("img.jpg");
+            background-position: top right; /* work as ---> object-position: top right; */
+            background-position: center center; 
+             
+            border: 2px solid black;
+        }
+
+        .container2{ /* 
+            Small Images repeat in the box                                                                                                                                                                                                                                                                                                                                              
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;                                                                                                                                                                                                                                                                        */
+            background-repeat: no-repeat;
+
+            width: 500px;
+            height: 500px;
+            background-image: url("data:image/jpeg;base64,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");
+            background-position: top right; 
+            background-position: center center;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+
+
+
+            margin: 100px;
+            border: 2px solid black;
+        }
+        
+        img{
+            width: 500px;
+            height: 500px;                                                                                                                                                                                   /*
+
+            #Object-fit : fill; ---> by default 
+
+            # Property : cover & contain                                                                                                                                                                */
+            object-fit: cover; /* AREA-ORIENTED ---> Show image in area ----> {width: 500px;} {height: 500px;} ----> even if Aspect Ratio sacrificed}                                                          */
+            object-fit: contain; /* IMAGE-ORIENTED ---> Show full image ---->  {width: 500px;} {height: 500px;} ----> even if remianing space visible }                                                        */
+
+            object-fit: cover;
+            object-position: top right; /* when image get cropped then which place to retain   
+            object-fit: 10px 20px;
+            object-fit: 50% 50%;                                                                                                                                                                                                    */
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="img.jpg" alt="none">
+    </div>
+
+    <div class="container2"></div>
+
+
+</body>
+</html>
