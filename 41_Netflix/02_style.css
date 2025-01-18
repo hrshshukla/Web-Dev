@@ -1,0 +1,374 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    color: white;
+}
+
+.logo{
+    height: 2rem;
+    width: 148px;
+}
+nav{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    padding: .50rem;
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block1{
+    position: relative;
+    text-align: center;
+    background-image: url("main.png");
+    background-position: center center; /* bg image will remain in center                                               */
+    background-repeat: no-repeat;
+    background-size: max(1400px, 100vw); /* which ever value is bigger between 1200px AND 100vw will get applied  */
+    height: 50rem;
+    width: 100%;
+    color: white;
+}
+
+.block1 .backgroundblock{
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background:radial-gradient(rgb(0, 0, 0),black); /* Radial Gradient */
+    opacity: 70%;
+}
+
+
+.block1 .mainblock{
+    position: relative;
+    align-content: center;
+    margin: 6rem auto 0 auto; 
+    width: 80vw;
+    height: 31rem;
+}
+
+.mainheading{
+    margin: auto;
+    width: 50%;
+    
+}
+.mainheading h1{
+    font-weight: 1000;
+    font-size: 3rem;
+    line-height: 70px;
+    margin: 0px 0px 15px; /* margin-bottom */
+}
+
+.mainheading h2{
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0px 0px 30px; /* margin-bottom */
+}
+
+.lastHeading{
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+.block1 .CTA{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px 0px; /* topmargin :10px */
+}
+
+.block1 .btn{
+    background-color: transparent;
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    margin: 0;
+    padding: 10px;
+    font-weight: bolder;
+    color: white;
+}
+
+.CTA input{
+    margin-right: 10px;
+    width: 300px;
+    height: 30px;
+    padding: 10px;;
+    border-radius: 5px;
+    background-color: rgba(18, 18, 18, 0.575);
+    border: 1px solid rgba(255, 255, 255, 0.495);
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.CTA input::placeholder{ /* How to target [placeholder]  inside [input]  */
+    color: rgba(255, 255, 255, 0.647);
+}
+
+.block1 .get-started{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+}
+
+.block1 .sign-in{
+    background-color: red;
+    height: 40px;
+}
+
+.block1 .lang-btn{
+    border: 1px solid white;
+    height: 40px;
+}
+
+
+select{
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+select option{ /* Trageting <option> inside <select> DROPDOWN tag */
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}
+
+body{
+    background-color: black;
+}
+
+ .line{
+    position: absolute;
+    bottom: 0;
+    height: 5px;
+    width: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    box-shadow: 10px -10px 50px 30px black ;
+    background: linear-gradient(to right, rgba(149, 2, 68, 0.408) 16%, rgb(230, 0, 0), rgb(255, 0, 13), rgb(255, 0, 115), rgba(210, 0, 95, 0.408) 84%);
+}
+
+.block2 {
+    height: 30rem;
+    width: 80vw;
+    margin: 50px auto;
+    background-color:black;
+}
+
+.block2 *{
+    margin-bottom: 20px;
+}
+
+.block2 .mega-banner{
+    position: relative;
+    width: 80%;
+    display: flex;
+    margin: 0px auto 10px;
+    gap: 40px;
+    justify-content: center;
+}
+
+.block2 .mega-banner img{
+    border-radius: 10px;
+}
+
+.block2 .banner{
+    position: relative;
+}
+.block2 .banner-txt{
+    position: absolute;
+    font-size: 100px;
+    color: black;
+    -webkit-text-stroke: 1px white; /* Applying Stroke in text AKA border */
+    font-weight: 1000;
+    text-shadow: 0px 0px 30px black;
+    bottom: 10%;
+    left: -10%;
+}
+
+.block2 .capsule{
+    background-color: rgb(14, 14, 14);
+    padding: 10px 20px;
+    border: 1px solid rgb(46, 46, 46);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 10;
+}
+
+.block2 select option{
+    color: white;
+}
+
+.block2 .capsule1{
+    margin-right:10px;
+}
+
+.block3 {
+    height: 25rem;
+    width: 80vw;
+    margin: 50px auto;
+    background-color:black;
+}
+
+.block3 h1{
+    margin-bottom: 20px;
+}
+
+.block3 .container *{
+    margin-bottom: 15px;
+    width: 100%;
+}
+.block3 .container{
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    gap: 15px;
+}
+
+.block3 .container .box{
+    position: relative;
+    align-items: center;
+    height: 230px;
+    width: 400px;
+    background-color: grey;
+    border-radius: 10px;
+    padding: 20px ;
+    background: linear-gradient(160deg, #0400ff2b, rgba(116, 0, 81, 0.236)); /* Applying linear gradient background color */
+}
+
+.block3 .box p{
+    color: rgba(255, 255, 255, 0.684);
+}
+
+.block3 .box .img-bottom{
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    width: 72px;
+    margin: 0;
+}
+
+.block4{
+    position: relative;
+    height: 40rem;
+    width: 80vw;
+    margin: 50px auto;
+    background-color:black;
+}
+
+.block4 .box{
+    display: flex;
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.block4 *{
+    margin: 10px;
+}
+
+.block4 h2{
+    font-weight: 400;
+}
+
+.block4 .box img{
+    height: 24px;
+}
+
+.block4 .CTA2{
+    height: 100px;
+    margin-top: 100px;
+
+}
+
+.block4 .CTA-btn{
+    position: relative;
+    z-index: 10;
+    height: 50px;
+    width: auto;
+    background-color: transparent;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.CTA-btn input{
+    margin-right: 10px;
+    width: 300px;
+    height: 30px;
+    padding: 10px;;
+    border-radius: 5px;
+    background-color: rgba(18, 18, 18, 0.575);
+    border: 1px solid rgba(255, 255, 255, 0.495);
+    color: white;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.CTA-btn input::placeholder{ /* How to target [placeholder]  inside [input]  */
+    color: rgba(255, 255, 255, 0.647);
+}
+
+.block4 .get-started{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+}
+
+.block4 .btn{
+    background-color: red;
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    margin: 0;
+    padding: 10px;
+    font-weight: bolder;
+    color: white;
+}
+footer{
+    bottom: 0;
+    height: 30rem;
+    width: 80vw;
+    margin: 0px auto 0px;
+    background-color:rgb(0, 0, 0);
+}
+
+footer .box3 .btn{
+    background-color: transparent;
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+    border: none;
+    margin: 0;
+    padding: 10px;
+    font-weight: bolder;
+    color: white;
+}
+
+footer .box3 .lang-btn{
+    border: 1px solid white;
+    height: 40px;
+}

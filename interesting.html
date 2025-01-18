@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Curve</title>
+
+    <style>
+        * {
+            background-color: black;
+        }
+        .container {
+            height: 40vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .line{
+            height: 5px;
+            width: 90%;
+            border-top-left-radius: 100%;
+            border-top-right-radius: 100%;
+            background: linear-gradient(to right, rgba(149, 2, 68, 0.408) 16%, rgba(190, 0, 0, 0.529), rgba(229, 9, 20, 1), rgba(184, 40, 105, 1), rgba(149, 2, 68, 0.408) 84%);
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="line"></div>
+    </div>
+</body>
+</html>
