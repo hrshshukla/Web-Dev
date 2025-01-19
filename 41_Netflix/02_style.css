@@ -5,6 +5,14 @@
     color: white;
 }
 
+a{
+    text-decoration: none;
+}
+
+:root{
+    --low-opacity-txt:rgba(255, 255, 255, 0.745);
+}
+
 .logo{
     height: 2rem;
     width: 148px;
@@ -40,7 +48,6 @@ nav{
     opacity: 70%;
 }
 
-
 .block1 .mainblock{
     position: relative;
     align-content: center;
@@ -51,9 +58,9 @@ nav{
 
 .mainheading{
     margin: auto;
-    width: 50%;
-    
+    width: 50%;   
 }
+
 .mainheading h1{
     font-weight: 1000;
     font-size: 3rem;
@@ -71,7 +78,7 @@ nav{
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
-    margin: 0;
+    margin: 0px 0px 10px;
 }
 
 .block1 .CTA{
@@ -83,8 +90,11 @@ nav{
 }
 
 .block1 .btn{
-    background-color: transparent;
+    display: inline-flex;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
     border-radius: 5px;
     height: 50px;
     border: none;
@@ -92,6 +102,11 @@ nav{
     padding: 10px;
     font-weight: bolder;
     color: white;
+}
+
+.block1 .top-buttons{
+    display: inline-flex;
+    align-items: center
 }
 
 .CTA input{
@@ -108,14 +123,10 @@ nav{
 }
 
 .CTA input::placeholder{ /* How to target [placeholder]  inside [input]  */
-    color: rgba(255, 255, 255, 0.647);
+    color: var(--low-opacity-txt);
 }
 
 .block1 .get-started{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     background-color: red;
     font-size: 20px;
     height: 50px;
@@ -124,14 +135,17 @@ nav{
 
 .block1 .sign-in{
     background-color: red;
-    height: 40px;
+    height: 15px;
+    width: 80px;
+    margin-left: 10px;
+    align-self: center;
 }
 
 .block1 .lang-btn{
-    border: 1px solid white;
-    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.607);
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.286);
 }
-
 
 select{
     border: none;
@@ -173,7 +187,8 @@ body{
 .block2 .mega-banner{
     position: relative;
     width: 80%;
-    display: flex;
+    display: 
+    flex;
     margin: 0px auto 10px;
     gap: 40px;
     justify-content: center;
@@ -229,6 +244,7 @@ body{
     margin-bottom: 15px;
     width: 100%;
 }
+
 .block3 .container{
     display: flex;
     /* flex-wrap: wrap; */
@@ -261,21 +277,25 @@ body{
 
 .block4{
     position: relative;
-    height: 40rem;
-    width: 80vw;
+    height: 38rem;
+    width: 80%;
     margin: 50px auto;
     background-color:black;
 }
 
 .block4 .box{
     display: flex;
-    width: 100%;
+    width: 90%;
     background-color: rgb(54, 54, 54);
     height: 50px;
-    padding: 10px;
+    padding: 15px 15px;
     justify-content: space-between;
     align-items: center;
     
+}
+
+.block4 .box:hover{
+    background-color:rgb(103, 103, 103) ;
 }
 
 .block4 *{
@@ -287,18 +307,17 @@ body{
 }
 
 .block4 .box img{
-    height: 24px;
+    height: 36px;
 }
 
-.block4 .CTA2{
+.CTA2{
     height: 100px;
-    margin-top: 100px;
-
+    margin: 0px auto 0px;
 }
 
-.block4 .CTA-btn{
+.CTA2 .CTA-btn{
     position: relative;
-    z-index: 10;
+    z-index: auto;
     height: 50px;
     width: auto;
     background-color: transparent;
@@ -323,10 +342,10 @@ body{
 }
 
 .CTA-btn input::placeholder{ /* How to target [placeholder]  inside [input]  */
-    color: rgba(255, 255, 255, 0.647);
+    color: var(--low-opacity-txt);
 }
 
-.block4 .get-started{
+.CTA2 .get-started{
     display: flex;
     text-align: center;
     justify-content: center;
@@ -337,7 +356,7 @@ body{
     width: 200px;
 }
 
-.block4 .btn{
+.CTA2 .btn{
     background-color: red;
     text-align: center;
     border-radius: 5px;
@@ -348,27 +367,71 @@ body{
     font-weight: bolder;
     color: white;
 }
+
 footer{
     bottom: 0;
     height: 30rem;
     width: 80vw;
-    margin: 0px auto 0px;
+    margin: 50px auto ;
     background-color:rgb(0, 0, 0);
+}
+
+footer .box1{
+    color: var(--low-opacity-txt);
+}
+
+footer ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: 100%;
+    height: auto; /* means adjust the heigh according to the items inside  */
+    margin: 20px auto;
+}
+
+footer ul li{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: var(--low-opacity-txt);
+    border: 1px black solid;
+    height: 30px;
+    width: 33.1%;
+}
+
+footer .box2 li a:hover{
+    color:red;
 }
 
 footer .box3 .btn{
     background-color: transparent;
     text-align: center;
     border-radius: 5px;
-    height: 50px;
+    height: 100px;
     border: none;
-    margin: 0;
+    margin: 20px 0px;
     padding: 10px;
-    font-weight: bolder;
     color: white;
-}
+} 
 
 footer .box3 .lang-btn{
-    border: 1px solid white;
-    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--low-opacity-txt);
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.286);
+}
+
+footer .box4{
+    color: var(--low-opacity-txt);
+}
+
+footer a{
+    color: var(--low-opacity-txt);
+}
+
+section{
+    position: relative;
+    z-index: auto;
 }
