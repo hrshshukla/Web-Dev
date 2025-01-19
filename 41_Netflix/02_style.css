@@ -5,12 +5,17 @@
     color: white;
 }
 
-a{
-    text-decoration: none;
-}
-
 :root{
     --low-opacity-txt:rgba(255, 255, 255, 0.745);
+    --background-color: black;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+a{
+    text-decoration: none;
 }
 
 .logo{
@@ -158,9 +163,6 @@ select option{ /* Trageting <option> inside <select> DROPDOWN tag */
     background-color: rgb(0, 0, 0);
 }
 
-body{
-    background-color: black;
-}
 
  .line{
     position: absolute;
@@ -177,7 +179,7 @@ body{
     height: 30rem;
     width: 80vw;
     margin: 50px auto;
-    background-color:black;
+    background-color:var(--background-color);
 }
 
 .block2 *{
@@ -233,7 +235,7 @@ body{
     height: 25rem;
     width: 80vw;
     margin: 50px auto;
-    background-color:black;
+    background-color:var(--background-color);
 }
 
 .block3 h1{
@@ -280,7 +282,7 @@ body{
     height: 38rem;
     width: 80%;
     margin: 50px auto;
-    background-color:black;
+    background-color:var(--background-color);
 }
 
 .block4 .box{
@@ -313,6 +315,7 @@ body{
 .CTA2{
     height: 100px;
     margin: 0px auto 0px;
+    background-color: var(--background-color);
 }
 
 .CTA2 .CTA-btn{
@@ -369,11 +372,11 @@ body{
 }
 
 footer{
-    bottom: 0;
+    bottom: 10%;
     height: 30rem;
     width: 80vw;
-    margin: 50px auto ;
-    background-color:rgb(0, 0, 0);
+    margin: 50px auto 0px ;
+    background-color:var(--background-color);
 }
 
 footer .box1{
@@ -385,7 +388,7 @@ footer ul{
     flex-wrap: wrap;
     list-style: none;
     width: 100%;
-    height: auto; /* means adjust the heigh according to the items inside  */
+    height: auto; /* means adjust the heigh according to the items inside this element */
     margin: 20px auto;
 }
 
@@ -423,11 +426,7 @@ footer .box3 .lang-btn{
     background-color: rgba(0, 0, 0, 0.286);
 }
 
-footer .box4{
-    color: var(--low-opacity-txt);
-}
-
-footer a{
+footer .box4, a{
     color: var(--low-opacity-txt);
 }
 
