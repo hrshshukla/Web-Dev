@@ -114,6 +114,10 @@ nav{
     align-items: center
 }
 
+select {
+    outline: none;
+}
+
 .CTA input{
     margin-right: 10px;
     width: 300px;
