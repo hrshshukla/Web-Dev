@@ -33,6 +33,13 @@
 // 
     console.log(MomName.startsWith("Pra")); // true ----> becasue "Pratima" is starting with "Pra"
     console.log(MomName.endsWith("bha")); // false ----> becasue "Pratima" do not ends with "bha"
+
+// Strings are Immuteable (cannot be changed)
+    let place = "Agra"
+    place[0] = "S"
+
+    console.log(place); // Agra
     
+
     
     
