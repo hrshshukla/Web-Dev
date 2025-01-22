@@ -10,4 +10,5 @@ console.log(arr);
 let factorial = (num1 , num2) => {
     return num1 * num2;
 }
+
 console.log(arr.reduce(factorial));

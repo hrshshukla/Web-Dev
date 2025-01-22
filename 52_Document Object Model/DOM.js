@@ -8,7 +8,24 @@ console.log(document.body);
 
 document.body.style.backgroundColor = "black" // adds inline css
 
-document.body.childNodes[1]
+document.body.childNodes[1] // it includes : #comment #text and elements
+
+document.body.firstElementChild // Only includes : element
+//<div class=​"container">​…​</div>​
+
+document.body.firstElementChild.children // to get all childrens 
+
+document.body.firstElementChild.children[1].previousElementSibling
+//<div class=​"box" style=​"background-color:​ green;​">​1​</div>​
+
+document.body.firstElementChild.children[1].nextElementSibling
+//<div class=​"box">​3​</div>​
+
+document.body.firstElementChild.children[1].parentElement
+//<div class=​"container">​…​</div>​
+
+
+
 
 let container = document.body.childNodes[1]
 // undefined
@@ -27,4 +44,3 @@ container.firstElementChild // ----> to get only element childs. means No [#comm
 
 container.firstElementChild.style.backgroundColor= "green";
 // 'green'
-
