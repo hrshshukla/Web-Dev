@@ -1,3 +1,6 @@
+// I lost one part of my life today, may GOD help me to get that again.
+
+
 let old_arr = [1, 2, 3, 4, 5, 6]
 let new_arr = []
 
@@ -37,5 +40,3 @@ console.log(array2.reduce(temp_var)); // 1+2+3+4+5+6 = 21
 // .from 
 let array4 = Array.from("Harsh")
 console.log(array4); // [ 'H', 'a', 'r', 's', 'h' ]
-
-
