@@ -298,11 +298,11 @@ select option{ /* Trageting <option> inside <select> DROPDOWN tag */
     justify-content: space-between;
     align-items: center;
     
+    &:hover{
+        background-color:rgb(103, 103, 103) ;
+    }
 }
 
-.block4 .box:hover{
-    background-color:rgb(103, 103, 103) ;
-}
 
 .block4 *{
     margin: 10px;

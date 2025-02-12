@@ -1,0 +1,41 @@
+<!DOCTYPE html><!--
+-- Custom DataSet 
+ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting & Removing</title>
+    <style>
+        .container {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box box1" style="color: blue;">I am box 1</div>
+        <div class="box box2">I am box 2</div>
+        <div data-MyName="Harsh" class="box3">I am box 3</div> <!-- Created Custom Dataset  -->
+    </div>
+
+    <script>
+        let newElement = document.createElement("div")
+        newElement.innerHTML = "I am append()";
+        document.querySelector(".container").append(newElement) // Insert inside ".container" at LAST (watch output)
+        
+        let newElement2 = document.createElement("div")
+        newElement2.innerHTML = "I am prepend()";
+        document.querySelector(".container").prepend(newElement2) // Insert inside ".container" at FIRST
+        
+        let newElement3 = document.createElement("div")
+        newElement3.innerHTML = "I am before()";
+        document.querySelector(".container").before(newElement3) // insert element before element. Here, Insert before ".container"
+        
+        let newElement4 = document.createElement("div")
+        newElement4.innerHTML = "I am after()";
+        document.querySelector(".container").after(newElement4) // insert element before element. Here, Insert before ".container"
+    </script>
+
+</body>
+</html>

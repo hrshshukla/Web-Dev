@@ -9,7 +9,7 @@
 
     let BroName = "Adarsh"
     console.log(BroName.slice(2)); // Output : arsh
-    console.log(BroName.slice(2,4)); // Output : slice( [start], [end] )
+    console.log(BroName.slice(2,4)); // Output : ar     slice( [start], [end-1] ) ----->RAW : slice (2,4) = Final : slice (2,3)
 
 // Replace & concatinate  ---> replace() & concat()
 
@@ -24,7 +24,7 @@
 
     let fatherName = "  Ayodhya   "
     console.log(fatherName);        // Output : [  Ayodhya   ]
-    console.log(fatherName.trim()); // Output : Ayodhya
+    console.log(fatherName.trim()); // Output : [Ayodhya]
 
 // Index 
     console.log(MomName[0]);

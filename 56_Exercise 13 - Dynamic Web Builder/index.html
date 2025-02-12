@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic website builder</title>
+    <style>
+        *{
+            padding: 0;
+            font-family: "Roboto", "Arial", sans-serif;
+        }
+
+        .card{
+            height: 120px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: black;
+            color: rgb(192, 192, 192);
+            display: flex;
+            align-items: center;
+        }
+        
+        .card *{
+            margin: 5px;
+        }
+        
+        .thumbnail{
+            position: relative;
+        }
+        
+        .thumbnail img{
+            border-radius: 5px;
+        }
+
+        .duration{
+            background-color: rgba(0, 0, 0, 0.501);
+            font-size: 10px;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            right: 1%;
+            bottom: 5%;
+            font-weight: bold;
+        }
+
+        .text{
+            align-self: flex-start;
+        }
+        
+        .text *{
+            margin: 0;
+            padding: 0;  
+        }
+
+        .text .title{
+            margin: 10px 0px;
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="numBOX">77</div>
+        <div class="thumbnail">
+            <img src="thumbnail.png" alt="nothing">
+            <span class="duration">24:13</span>
+        </div>
+        <div class="text">
+            <div class="title">JavaScript Exercise 13 - Solution & Shoutouts | Sigma Web Development Course - Tutorial #77</div>
+            <div class="detail">
+                <span class="channelName">CodeWithHarry</span> &bull;
+                <span class="views">91K views</span>  &bull;
+                <span class="Time">1 year ago</span>
+            </div>
+        </div>
+    </div>
+    <script src="solution.js"></script>
+</body>
+</html>

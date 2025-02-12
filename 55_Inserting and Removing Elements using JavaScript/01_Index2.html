@@ -1,0 +1,88 @@
+<!DOCTYPE html><!--
+    -- insertAdjacentHTML
+     -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserting & Removing</title>
+    <style>
+        .container {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-colorRED colorWHITE">
+        <div class="box box1">I am box 1</div>
+        <div class="box box2">I am box 2</div>
+        <div class="box3">I am box 3</div>
+    </div>
+
+    <script>
+        // insertAdjacentHTML.afterbegin ---> inserts (inside) at top element after ".container"
+        let container1 = document.querySelector(".container")
+        container1.insertAdjacentHTML("beforebegin", "<b> I am beforebegin() </b>")
+
+        // insertAdjacentHTML.beforebegin ---> inserts (outside) at top element before ".container"
+        let container2 = document.querySelector(".container")
+        container2.insertAdjacentHTML("afterbegin", "<b> I am afterbegin() </b>")
+
+        // insertAdjacentHTML.beforeend ---> inserts (inside)  at bottom ".container" (outside)
+        let container3 = document.querySelector(".container")
+        container3.insertAdjacentHTML("beforeend", "<b> I am beforeend() </b>")
+
+        // insertAdjacentHTML.beforeend ---> inserts (outside)  at bottom ".container" (outside)
+        let container4 = document.querySelector(".container")
+        container4.insertAdjacentHTML("afterend", "<b> I am afterend() </b>")
+
+
+
+
+        // ------------------------------- remove() --------------------------------------
+        document.querySelector(".box2").remove() // removed "box2"
+
+
+
+        // ------------------------------ className & classList ------------------------- (In browser)
+        document.querySelector(".container").className
+        // 'container bg-colorRED colorWHITE'
+
+        document.querySelector(".container").className.add("tempClass") // ---> will add (.tempClass) in container
+        // Now container classes = container bg-colorRED colorWHITE tempClass
+
+        document.querySelector(".container").className.remove("tempClass") // ---> will remove (.tempClass) from container
+        // Now container classes = container bg-colorRED colorWHITE 
+
+        document.querySelector(".container").classList
+        // DOMTokenList(3)['container', 'bg-colorRED', 'colorWHITE', value: 'container bg-colorRED colorWHITE']
+        // 0 : "container"
+        // 1 : "bg-colorRED"
+        // 2 : "colorWHITE"
+        // length : 3
+        // value : "container bg-colorRED colorWHITE"
+
+
+
+        // -------------------------------- toggle() -----------------------------------------
+        document.querySelector(".container").classList.toggle("bg-colorRED") // if "bg-colorRED" class exist then [remove] it and if not exist then [add] it 
+        //false 
+
+        document.querySelector(".container").classList.toggle("bg-colorRED")
+        // true
+
+        document.querySelector(".container").classList.toggle("bg-colorRED")
+        // false
+
+        // Here :
+        // [true] means Class was added.
+        // [false] means Class was removed.
+
+
+
+    </script>
+</body>
+
+</html>

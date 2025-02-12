@@ -1,0 +1,43 @@
+<!DOCTYPE html><!--
+ -- LEARNING :  
+    (Q) Problems while applying [addEventListener]
+    (+) [addEventListener] cannot be applied on whole array at once
+
+    -- document.getElementsByClassName("btn") ----- -> returns [array] ----- [addEventListener] cannot be applied but there is a way 
+    -- document.querySelectorAll       ----- -> returns [array] ----- [addEventListener] cannot be applied 
+    
+    -- document.addEventListener("btn")[0] ------ > returns [single] element ----- [addEventListener] can be applied 
+    -- document.querySelectorAll(".btn")[0] ----- > returns [single] element ----- [addEventListener] can be applied 
+
+    -- document.getElementById ----- > returns [single] element ----- [addEventListener] can be applied 
+    -- document.querySelector  ----- > returns [single] element ----- [addEventListener] can be applied 
+
+ -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+        .box{
+            border: 2px solid black;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"> I am a Box</div>
+    </div>
+    <button class="btn">Button 1</button>
+    <button class="btn2">Button 2 (Double Click) </button>
+    
+    <script src="01_Event.js"></script>
+</body>
+
+</html>

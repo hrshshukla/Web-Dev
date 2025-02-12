@@ -6,18 +6,18 @@ for (let i = 1; i <= 10; i++) {
 
 //_for-in_loop
 
-let obj={
-    Name : "Harsh",
-    Batch : "BCA",
-    Year : "1st Year"
+let Details={               // let obj = {
+    Name : "Harsh",         //       key : obj[key]
+    Batch : "BCA",          //       key : obj[key]
+    Year : "1st Year"       //       key : obj[key]
 }
 // Here [Name, Batch, Year] are the key
 
-for (const key in obj) {
-    console.log(obj); // { Name: 'Harsh', Batch: 'BCA', Year: '1st Year' }
+for (const key in Details) {
+    console.log(Details); // { Name: 'Harsh', Batch: 'BCA', Year: '1st Year' }
     console.log(key); // Output : Name  Batch   Year
 
-    const element = obj[key]; // obj[key] means values of [keys] inside the [obj]
+    const element = Details[key]; // obj[key] means values of [keys] inside the [obj]
 
     // print : key + element
     console.log(key, element); // [Name Harsh]   [Batch BCA]   [Year 1st Year]

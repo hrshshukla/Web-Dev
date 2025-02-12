@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- This written by chatGPT and its awesome  -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker's Terminal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Jersey+15&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            font-family: "Jersey 15", serif;
+            font-weight: 100;
+            font-size: 20px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(0, 161, 0);
+            text-align: center;
+            position: relative;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .head {
+            font-size: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .box {
+            margin: 1rem auto;
+            border: 2px #2bff0099 solid;
+            border-top: 20px #2bff00d9 solid;
+            width: 80%;
+            height: 80%;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+
+        .textContainer {
+            margin: 10px;
+            text-align: start;
+            position: relative;
+            z-index: 3;
+        }
+
+        .textContainer .emoji {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="binaryMatrix"></canvas>
+
+    <div class="head"> Hacker's Terminal</div>
+    <div class="box">
+        <div class="textContainer">
+        </div>
+    </div>
+
+    <script>const messages = [
+        "Initializing Hacking",
+        "Reading your Files",
+        "Password files Detected",
+        "Sending all passwords and personal files to server",
+        "Cleaning up"
+    ];
+    
+    const textContainer = document.querySelector(".textContainer");
+    
+    // Function to add blinking dots at the end of each message
+    function blinking(textElement, message) {
+        let dots = 0;
+        return setInterval(() => {
+            dots = (dots + 1) % 4; // Adds dots up to "..." and then resets
+            textElement.textContent = message + ".".repeat(dots); // Updates text with increasing dots
+        }, 200); // Runs every 200ms to create a blinking effect
+    }
+    
+    async function displayMessages() {
+    
+        for (let message of messages) { // Loop through all messages
+    
+            const textElement = document.createElement("div"); // Create a new <div> for each message
+            textContainer.appendChild(textElement); // Append the new <div> inside [textContainer]
+    
+            const textTick = document.createElement("span"); // Create a <span> element for the ✅ symbol
+            textTick.textContent = "✅"; // Set text content of span to ✅
+            textTick.classList.add("emoji"); // Add class "emoji" for styling
+    
+            const blinkingInterval = blinking(textElement, message); // Call blinking() to animate dots
+    
+            let random_time = 1 + (Math.random() * 7); // Generate a random time between 1-7 seconds
+            await new Promise((resolve) => setTimeout(resolve, random_time * 1000)); // Wait for random_time in milliseconds
+    
+            clearInterval(blinkingInterval); // Stop the blinking effect after timeout
+            textElement.textContent = message + " "; // Remove blinking dots before adding ✅
+            textElement.appendChild(textTick); // Append ✅ at the end of the message
+        }
+    }
+    
+    displayMessages(); // Call displayMessages() to start execution
+    
+    // Binary Background Animation
+    const canvas = document.getElementById("binaryMatrix");
+    const ctx = canvas.getContext("2d");
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    const fontSize = 16;
+    const columns = Math.floor(canvas.width / fontSize); // Determine number of columns based on canvas width
+    const drops = Array(columns).fill(0); // if [columns = 20] then --> drops = Array(20).fill(0) --> drops = [0, 0, 0, 0, 0, ..., 0];  // (20 times)
+    
+    function drawMatrix() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.1)"; // Set background color with slight transparency
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // Redraw background to create fading effect
+    
+        ctx.fillStyle = "#00ff00"; // Set text color to green
+        ctx.font = `${fontSize}px monospace`; // Use monospaced font for matrix effect
+    
+        for (let i = 0; i < drops.length; i++) { // Loop through each column
+            const text = Math.random() > 0.5 ? "1" : "0"; // Randomly select 1 or 0
+            const x = i * fontSize; // Calculate x position based on column index
+            const y = drops[i] * fontSize; // Calculate y position based on drop index
+    
+            ctx.fillText(text, x, y); // Draw the binary character at (x, y)
+    
+            if (y > canvas.height && Math.random() > 0.975) { // Reset drop to top randomly
+                drops[i] = 0;
+            }
+            drops[i]++; // Move drop downward
+        }
+    }
+    
+    setInterval(drawMatrix, 100); // Refresh matrix effect every 50ms
+    
+    // Resize canvas when window size changes
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+    </script>
+</body>
+
+</html>

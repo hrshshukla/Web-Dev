@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+ <!-- Create a hacking simulator which has green background and it shows these messages with random delay of 1 to 7 seconds 
+    
+    Initializing Hacking...
+    Reading your Files...
+    Password files Detected...
+    Sending all passwords and personal files to server...
+    Cleaning up...
+
+    The three dots must blink so that it looks like a real terminal
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker's Terminal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Jersey+15&display=swap');
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            font-family: "Jersey 15", serif;
+            font-weight: 100;
+            font-size: 20px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(0, 161, 0);
+            text-align: center;
+
+        }
+
+        .head {
+            font-size: 60px;
+        }
+
+        .box {
+            margin: 1rem auto;
+            border: 2px #2bff0099 solid;
+            border-top: 20px #2bff00d9 solid;
+            width: 80%;
+            height: 80%;
+        }
+
+        .textContainer {
+            margin: 10px;
+            text-align: start;
+        }
+
+        .textContainer .emoji{
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head"> Hacker's Terminal</div>
+    <div class="box">
+        <div class="textContainer">
+        </div>
+    </div>
+
+     <script src="03_MySolution.js"> </script>                                                                                                                                                               <!--
+     <script src="02_MySolution.js"> </script>                                                                                                                                                          -->
+</body>
+
+</html>

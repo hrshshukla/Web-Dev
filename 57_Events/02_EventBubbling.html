@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        body * {
+            margin: 0;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .GrandFatherContainer {
+            background-color: red;
+        }
+
+        .FatherContainer {
+            background-color: yellow;
+        }
+
+        .ChildContainer {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="GrandFatherContainer">
+        <div class="FatherContainer">
+            <div class="ChildContainer">I am child Container & My code is : 123</div>
+        </div>
+    </div>
+
+    <script>
+        // 02_EventBubbling.js
+        document.querySelector(".ChildContainer").addEventListener("click", (event) => {
+            event.stopPropagation() // Now [ChildContainer] is separate but [FatherContainer + GrandFatherContainer] are in relationship
+            alert("I am ChildContainer")
+        })
+
+        document.querySelector(".FatherContainer").addEventListener("click", (event) => {
+            event.stopPropagation() // Now [ChildContainer] and is  [FatherContainer] are separate hence [GrandFatherContainer] became automatic separate 
+            alert("I am FatherContainer")
+        })
+
+        document.querySelector(".GrandFatherContainer").addEventListener("click", (event) => {
+            event.stopPropagation() // Now [ChildContainer], [FatherContainer] & [GrandFatherContainer] are separate 
+            alert("I am GrandFatherContainer")
+        })
+
+        // ------------- SetInterval Function----------
+        let childContainer = document.querySelector(".ChildContainer")
+        
+        let intervalFunction = setInterval(() => {
+            childContainer.textContent = `I am child Container & My code is : ${Math.random()} ` // this number will change after every 3000ms = 3sec
+        }, 300);
+        
+        console.log(intervalFunction);
+        // ClearInterval(intervalFunctionValue) ---> In browser
+
+
+        //----------- SetTimeOut -----------------------
+        let oneTimeFunction = setTimeout(() => {
+            document.querySelector(".GrandFatherContainer").insertAdjacentHTML("afterend", "<b>I am oneTimeFunction by ---> setTimeout() </b>")
+        }, 10000); // ----> will run only once after 3000ms = 3sec 
+
+        console.log(oneTimeFunction);
+        
+        
+    </script>
+</body>
+
+</html>
