@@ -13,7 +13,7 @@ function fetchData1() {
 fetchData1().then(console.log)
 console.log("⏳ Waiting...");
 
-//Ouput:
+//Output:
 // ⏳ Waiting...
 // 📦 Data Loaded! (after 2 sec)
 
@@ -30,7 +30,7 @@ async function fetchData2() {
 console.log("⏳ Waiting...");
 fetchData2()
 
-//Output: (Same Ouput as fetchData1 but, more readable code)
+//Output: (Same Output as fetchData1 but, more readable code)
 // ⏳ Waiting...
 // 📦 Data Loaded! (after 2 sec)
 

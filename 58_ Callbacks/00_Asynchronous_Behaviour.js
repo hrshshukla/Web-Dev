@@ -10,7 +10,7 @@ setTimeout(() => {
 
 console.log("The End");
 
-// Ouput :
+// Output :
 // I am first Output
 // I am second Output
 // The End

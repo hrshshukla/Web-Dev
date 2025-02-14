@@ -24,7 +24,7 @@ class Person {
 }
 
 const person = new Person("John");
-console.log(person.name);  // Ouput : John ---> getter() is automatically called
+console.log(person.name);  // Output : John ---> getter() is automatically called
 
 person.name = "Harsh";     // setter() is automatically called to change the name
 console.log(person.name);  // Output: Harsh

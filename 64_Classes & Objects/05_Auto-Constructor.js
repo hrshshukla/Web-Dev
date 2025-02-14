@@ -21,4 +21,4 @@ class Animal {
 
 class Monkey extends Animal {} // Monkey() have no constructor So it will pass "Wukong" to super class constructor --> super("Wukong")
 
-const Monkey1 = new Monkey("Wukong") // Ouput : Wukong ---> (Called from Animal())
+const Monkey1 = new Monkey("Wukong") // Output : Wukong ---> (Called from Animal())

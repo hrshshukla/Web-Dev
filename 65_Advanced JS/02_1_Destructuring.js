@@ -12,10 +12,10 @@ console.log(Fruit1, Fruit2, otherFruits); // Output :  Apple  Mango  [ 'Cherry',
 
 
 // Now because [otherFruits] holds multiple value [ 'Cherry', 'Grapes' ] that makes it object
-console.log(typeof(otherFruits)); // Ouput: object 
+console.log(typeof(otherFruits)); // Output: object 
 
 
 // (2) Using Destructing to unpack [properties] form an [object]
 const {Name, age} = { name : "Harsh", age: 19}
-console.log(Name, age); // Ouput : Harsh 19
+console.log(Name, age); // Output : Harsh 19
 

@@ -9,7 +9,7 @@ console.log(final1); // ❌ERROR
 let data2 = await fetch("https://jsonplaceholder.typicode.com/todos/1") // program will wait until fetch() is not completed and then await returns resolve ✅NO ERROR
 let final2 = await data2.json() // program will wait until json() onversion is not completed and then await returns resolve ✅NO ERROR
 
-console.log(final2); // Ouput : { userId: 1, id: 1, title: 'delectus aut autem', completed: false }
+console.log(final2); // Output : { userId: 1, id: 1, title: 'delectus aut autem', completed: false }
 
 
 

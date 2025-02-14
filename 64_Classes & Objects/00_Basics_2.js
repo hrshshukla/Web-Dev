@@ -8,8 +8,8 @@ class User {
     }
 }
 
-const user1 = new User(); // Ouput : Unknown
-const user2 = new User("john"); // Ouput : john
+const user1 = new User(); // Output : Unknown
+const user2 = new User("john"); // Output : john
 
 
 // ----------------------------- Number (2) ---------------------------
@@ -20,5 +20,5 @@ class Customer {
     }
 }
 
-const Customer1 = new Customer(); // Ouput : Harsh
-const Customer2 = new Customer("john"); // Ouput : john
+const Customer1 = new Customer(); // Output : Harsh
+const Customer2 = new Customer("john"); // Output : john

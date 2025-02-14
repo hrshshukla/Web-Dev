@@ -11,5 +11,5 @@ let y = 10;
 console.log(z);  // ❌Error: Cannot access 'z' before initialization
 const z = 20;
 
-console.log(x); // ✅ Ouput : [undefined] but "x" is accessible
+console.log(x); // ✅ Output : [undefined] but "x" is accessible
 var x = 6

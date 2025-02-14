@@ -9,7 +9,7 @@
 function fetchData1() {
     return "I'm Normal Function ✅ Data Fetched!" 
 }
-console.log(fetchData1()); // Ouput: I'm Normal Function
+console.log(fetchData1()); // Output: I'm Normal Function
 
 
 // Async + normal function = return Promise 
@@ -24,4 +24,4 @@ console.log(fetchData2()); // Output : Promise { "I'm Async function returning P
 // Number : (2)
 // As we know [.then] was used with Promise
 //  and because Async also made [fetchData2] to return a Promise. So now, we can use [.then] with [fetchData2] also
-fetchData2().then(); // Ouput : I'm Async function returning Promise ✅ Data Fetched!
+fetchData2().then(); // Output : I'm Async function returning Promise ✅ Data Fetched!

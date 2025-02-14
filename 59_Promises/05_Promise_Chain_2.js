@@ -1,8 +1,8 @@
 // Promise changing using function
 // Try changing the value from  true (✅) to  false (❌)
 // So technically, 
-// if pizzaOrdered = ❌ then [pizzaBaked] & [pizzaDelivered] function would not be called, Hence Ouput = ❌ Not Ordered
-// And if pizzaOrdered = ✅ && pizzaBaked = ❌ then [pizzaDelivered] function would not be called, Hence Ouput = [🍕 Pizza is ordered] [❌ Not Baked]
+// if pizzaOrdered = ❌ then [pizzaBaked] & [pizzaDelivered] function would not be called, Hence Output = ❌ Not Ordered
+// And if pizzaOrdered = ✅ && pizzaBaked = ❌ then [pizzaDelivered] function would not be called, Hence Output = [🍕 Pizza is ordered] [❌ Not Baked]
 // And if pizzaOrdered = ✅ && pizzaBaked = ✅ but pizzaDelivered = ❌ then [🍕 Pizza is ordered] [🔥 Pizza is baked] [❌ Not delivered]
 // And if pizzaOrdered = ✅ && pizzaBaked = ✅ but pizzaDelivered = ✅ then [🍕 Pizza is ordered] [🔥 Pizza is baked] [🚗 Pizza is delivered]
 
@@ -29,7 +29,7 @@ function pizzaDelivered() {
 
 orderPizza()
     .then((message)=>{ // This one will trigger for [pizzaOrdered]
-        console.log(message); // Ouput : "🍕 Pizza is ordered"
+        console.log(message); // Output : "🍕 Pizza is ordered"
         return pizzaBaked()
     })
     .then((message)=>{ // This one will trigger for [pizzaBaked]

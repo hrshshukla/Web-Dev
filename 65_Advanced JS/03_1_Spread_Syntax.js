@@ -6,8 +6,8 @@ function Sum(a, b, c) {
 }
 
 let arr = [2, 3, 4]
-Sum(arr[0], arr[1],arr[2]) // Ouput : 9 (but it took time to write)
-Sum(...arr) // Ouput : 9  (✅ easy and fast )
+Sum(arr[0], arr[1],arr[2]) // Output : 9 (but it took time to write)
+Sum(...arr) // Output : 9  (✅ easy and fast )
 
 // Sum(arr) ----> ❌Wrong
 

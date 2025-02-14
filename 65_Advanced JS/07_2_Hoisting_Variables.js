@@ -20,6 +20,6 @@ function tempFunction() {
 }
 
 tempFunction()                                                                                                                                   /*
-Ouput : 
+Output : 
  undefined
  6                                                                                                                                                  */
