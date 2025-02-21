@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- write a program to load a javascript file and alert "file Loaded✅" when file get loaded -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onload</title>
+</head>
+<body>
+    <script class="script">
+        let script = document.createElement("script")
+        script.src = "(9)_X_Example.js"
+        document.head.appendChild(script);
+        
+        async function getLoaded() {
+
+            await new Promise((resolve) => {
+               script.onload = ()=> resolve()
+            })
+
+            alert("file Loaded✅")
+        }
+
+        getLoaded()
+
+    </script>
+</body>
+</html>

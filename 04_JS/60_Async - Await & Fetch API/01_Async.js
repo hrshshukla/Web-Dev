@@ -1,6 +1,6 @@
 // async makes any function return a promise automatically.
-// 🔹 Without async, you must explicitly return a promise.
-// 🔹 With async, JavaScript automatically wraps it inside a promise.
+// 🔹 Without async, you must need return a promise by ourself.
+// 🔹 With async, JavaScript automatically returns promise.
 
 
 

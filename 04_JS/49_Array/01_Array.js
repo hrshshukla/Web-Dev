@@ -5,7 +5,6 @@ console.log(arr); //---> [ 1, 2, 3, 4, 9 ]
 console.log(arr.length); // ---> 5
 
 // Arrays are muteable 
-
 arr[0] = 899;
 console.log(arr); // [ 899, 2, 3, 4, 9 ]
 
@@ -30,6 +29,7 @@ console.log(str);
 // arr.pop() < --- delete the last element
 console.log(arr.pop()); // Prints the last element which is deleted 
 console.log(arr); // Now remaining arr = [ 899, 2, 3, 4 ]
+
 
 
 
@@ -98,7 +98,7 @@ let num3 = [1,  2,  3,  4,  5,  6]
     console.log(num3.slice(2,5)); // [ 3, 4, 5 ]
 
 
-
+    
 // reverse 
 let num4 = [1,2,3,4,5]
       console.log(num4.reverse()); // [ 5, 4, 3, 2, 1 ]

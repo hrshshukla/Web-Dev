@@ -39,22 +39,20 @@
         container4.insertAdjacentHTML("afterend", "<b> I am afterend() </b>")
 
 
-
-
         // ------------------------------- remove() --------------------------------------
         document.querySelector(".box2").remove() // removed "box2"
 
-
-
+        
         // ------------------------------ className & classList ------------------------- (In browser)
+        
         document.querySelector(".container").className
         // 'container bg-colorRED colorWHITE'
+        
+        // Using className to replace all classes
+        let container = document.querySelector(".container");                                                                                                       /*
+        container.className = "newClass"; 
+        -- Now class="newClass"                                                                                                                                      */
 
-        document.querySelector(".container").className.add("tempClass") // ---> will add (.tempClass) in container
-        // Now container classes = container bg-colorRED colorWHITE tempClass
-
-        document.querySelector(".container").className.remove("tempClass") // ---> will remove (.tempClass) from container
-        // Now container classes = container bg-colorRED colorWHITE 
 
         document.querySelector(".container").classList
         // DOMTokenList(3)['container', 'bg-colorRED', 'colorWHITE', value: 'container bg-colorRED colorWHITE']
@@ -65,22 +63,17 @@
         // value : "container bg-colorRED colorWHITE"
 
 
+        document.querySelector(".container").classList.add("tempClass") // ---> will add (.tempClass) in container
+        // Now container classes = container bg-colorRED colorWHITE tempClass
+
+        document.querySelector(".container").classList.remove("tempClass") // ---> will remove (.tempClass) from container
+        // Now container classes = container bg-colorRED colorWHITE 
+
 
         // -------------------------------- toggle() -----------------------------------------
         document.querySelector(".container").classList.toggle("bg-colorRED") // if "bg-colorRED" class exist then [remove] it and if not exist then [add] it 
-        //false 
 
         document.querySelector(".container").classList.toggle("bg-colorRED")
-        // true
-
-        document.querySelector(".container").classList.toggle("bg-colorRED")
-        // false
-
-        // Here :
-        // [true] means Class was added.
-        // [false] means Class was removed.
-
-
 
     </script>
 </body>

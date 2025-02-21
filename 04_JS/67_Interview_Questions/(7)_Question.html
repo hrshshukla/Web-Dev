@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="note"></div>
+    <button>Add note</button>
+    <script>
+        
+        function saveNote(note) {
+            localStorage.setItem("note :",note)
+        }
+        
+        document.querySelector("button").addEventListener("click",()=>{
+            let note = prompt("Enter note :")   
+            saveNote(note)
+
+            if (note) {
+                document.querySelector(".note").innerHTML = note
+            }
+        })
+
+    </script>
+</body>
+</html>

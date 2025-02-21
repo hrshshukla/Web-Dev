@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        if (localStorage.getItem("name")) { // if "name" doesnt exist then it will give : NULL which is a falsy value 
+            let tempName = localStorage.getItem("name")
+            document.write("Welcome " + tempName)
+        }
+        else{
+            let userInput = prompt("Enter name :")
+            localStorage.setItem("name", userInput) // ("name", userInput) ---> name : userInput
+        }
+
+    </script>
+</body>
+</html>

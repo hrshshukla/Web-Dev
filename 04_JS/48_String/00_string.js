@@ -19,5 +19,3 @@ console.log(`My name is : ${str}`); // Template literals
 //__________________________ Escape Sequence Character_________________________________________________________________
 console.log("harsh \n shukla"); // Output : "\n" for new line 
 console.log("harsh \" shukla"); // Output : harsh " shukla
- 
-

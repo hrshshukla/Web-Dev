@@ -1,0 +1,51 @@
+ <!-- 
+ localStorage is a way to store data in the browser that stays even after you close the browser.
+ IMPORTANT : it only works in Broswer (not in VScode) because its part of WEB API 
+  (1) It stores data as key-value pairs (like a dictionary).
+  (2) Data in localStorage never expires until you delete it manually.
+
+ Methods : 
+ (+) .setItem(key, value) – Save data.
+ (+) .getItem(key) – Get data.
+ (+) .removeItem(key) – Delete specific data.
+ (+) .clear() – Clear all data.  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+
+        // Storing data
+        localStorage.setItem('username', 'HarshShukla');  // means { username: HarshShukla }
+        
+        // Getting data
+        let user = localStorage.getItem('username');
+        console.log(user);    // Output: HarshShukla
+        
+        // Updating data
+        localStorage.setItem('username', 'ShuklaHarsh');
+        
+        // Getting updated data
+        user = localStorage.getItem('username');
+        console.log(user);    // Output: ShuklaHarsh
+        
+        // Deleting data
+        localStorage.removeItem('username');
+        
+        // Trying to get deleted data
+        user = localStorage.getItem('username');
+        console.log(user);    // Output: null
+        
+        // Clearing all data (if there were multiple items)
+        localStorage.clear();
+    </script>
+</body>
+</html>
+
+

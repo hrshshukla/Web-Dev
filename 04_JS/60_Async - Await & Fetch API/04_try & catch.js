@@ -1,7 +1,7 @@
-// (+) try runs the code that may cause an error.
-// (+) catch (error) runs if an error occurs.
+// (+) try runs that code which may cause an error.
+// (+) catch (error) runs if an error occurs on the code written in try.
 // (+) Without try & catch, an error in [await] will break the program.
-//     So, Instead of crashing the program, the error is caught and logged into the screen.
+//  So, Instead of crashing the program, the error is caught and logged into the screen.
 
 // Syntax :
 try {

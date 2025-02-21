@@ -9,6 +9,7 @@ for (let i = 0; i < old_arr.length; i++) {
     const element = old_arr[i];
     new_arr.push(element) // ---->  every element of [old_arr] will insert into [new_arr]
 }
+
 console.log(new_arr); // [1, 2, 3, 4, 5, 6]
 
 

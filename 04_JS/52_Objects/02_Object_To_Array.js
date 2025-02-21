@@ -19,6 +19,3 @@ console.log(Array);
 
 
 
-// for (const eachStudent of marksArray) {
-//     console.log(eachStudent);
-// }
