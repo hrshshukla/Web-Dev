@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Expense Splitter</h2>
+        <div class="menu-item">🏠 Dashboard</div>
+        <div class="menu-item">📋 Forms</div>
+        <button class="create-expense">Create Expense <span>+</span></button>
+    </div>
+
+    <div class="main-content">
+        <div class="nav">
+            <div class="user-info">
+                <img class="profile-photo" src="user.svg" alt="-">
+                <p class="profile-name">Harsh Shukla</p>
+            </div>
+            <img class="hamburger" src="hamburger.svg" alt="-">
+        </div>
+        <h1>Dashboard</h1>
+        <div class="dashboard">
+            <div class="card">
+                <div class="people-icon"><img src="peopleicon.svg" alt="none"></div>
+                <div class="info">
+                    <h3>Total People</h3>
+                    <p class="total-people">--</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="expense-icon"><img src="cashicon.svg" alt=""></div>
+                <div class="info">
+                    <h3>Total Expenses</h3>
+                    <p class="total-expense">₹--</p>
+                </div>
+            </div>
+        </div>
+        <h2 id="expense-title" style="display: none;"></h2>
+        <div class="maintable">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>People</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </table>
+        </div>
+        
+
+        <div class="form-table">
+
+            <h2>Expense Splitter</h2>
+            <div class="closebutton">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon" onclick="closeForm()">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+            <div class="form-container">
+                <label>Title:</label>
+                <input type="text" id="title"><br><br>
+                <label>Amount (₹):</label>
+                <input type="number" id="amount"><br><br>
+                <div id="people-container"></div>
+                <div class="formButton">
+                    <button class="addPerson Button" onclick="addPerson()">Add Person</button>
+                    <button class="submitForm Button" onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="result-container" id="result-container" style="display:none;">
+            <h3 id="display-title"></h3>
+            <table id="result-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+    </div>
+
+<script>
+let personCount = 0;
+
+function addPerson() {
+    if (personCount >= 10) return;
+    personCount++;
+    const container = document.getElementById("people-container");
+    const row = document.createElement("div");
+    row.className = "person-row";
+    row.innerHTML = `
+    <input type="text" placeholder="Name" class="name">
+    <input type="email" placeholder="Email" class="email">
+    <button onclick="removePerson(this)"><img src="close.svg" alt="x"></button>
+    `;
+    container.appendChild(row);
+
+    updateTotalPeople(); // Update total people count after adding a person
+}
+
+function removePerson(button) {
+    // Prevent the event from bubbling up to the document's click event listener
+    event.stopPropagation();
+
+    // Remove the person row
+    button.parentElement.remove();
+    personCount--;
+
+    updateTotalPeople(); // Update total people count after removing a person
+}
+
+function updateTotalPeople() {
+    // Get the total number of people from the table
+    const peopleCount = document.querySelectorAll(".maintable table tbody tr").length-1;
+    
+    // Update the dashboard with the total number of people
+    document.querySelector(".dashboard .card:first-child .info p").textContent = peopleCount;
+}
+
+function updateTotalExpense() {
+    // Get all the amount cells in the table
+    const amountCells = document.querySelectorAll(".maintable table tbody td:nth-child(3)");
+
+    let totalAmount = 0;
+
+    // Loop through each amount cell, extract the numeric value, and sum them up
+    amountCells.forEach(cell => {
+        const amount = parseFloat(cell.textContent.replace("₹", ""));
+        totalAmount += amount;
+    });
+
+    // Update the dashboard with the total expense
+    document.querySelector(".dashboard .card:nth-child(2) .info p").textContent = `₹${totalAmount}`;
+}
+
+function addExpenseToTable(id, name, amount) {
+    let table = document.querySelector(".maintable table tbody");
+
+    let newRow = document.createElement("tr");
+    let todayDate = new Date().toLocaleDateString(); // Get today's date
+
+    newRow.innerHTML = `
+        <td>${id}</td>
+        <td>${name}</td>
+        <td>₹${amount}</td>
+        <td class="payment-date">${todayDate}</td>
+        <td>
+            <span class="status pending" onclick="markPaidText(this)">Pending</span>
+            <input type="checkbox" class="status-checkbox" onclick="markPaid(this)"/>
+        </td>
+    `;
+
+    table.appendChild(newRow);
+
+    // After adding a new expense, update both total people and total expense
+    updateTotalPeople();
+    updateTotalExpense(); // Update the total expense after adding an expense
+}
+
+function submitForm() {
+    const title = document.getElementById("title").value;
+    const amount = parseFloat(document.getElementById("amount").value);
+    const names = document.querySelectorAll(".name");
+    
+    // Validate input
+    if (names.length === 0 || amount <= 0 || isNaN(amount)) return;
+
+    const share = (amount / names.length).toFixed(2);
+
+    // Create a new table for each form submission
+    const newTable = document.createElement("table");
+    const tableHeader = document.createElement("thead");
+    tableHeader.innerHTML = `
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+    `;
+    newTable.appendChild(tableHeader);
+
+    // Create table body and add the expenses to it
+    const tableBody = document.createElement("tbody");
+
+    let currentRows = tableBody.getElementsByTagName("tr").length;
+    
+    for (let i = 0; i < names.length; i++) {
+        addExpenseToTable(currentRows + i + 1, names[i].value, share, tableBody);
+    }
+
+    newTable.appendChild(tableBody);
+
+    // Create a title for the new table
+    const tableTitle = document.createElement("h3");
+    tableTitle.textContent = `Expense Title: ${title}`;
+    
+    // Get the result container
+    const resultContainer = document.getElementById("result-container");
+
+    // Insert the title at the top of the result container
+    resultContainer.prepend(tableTitle);
+
+    // Add the table below the title
+    resultContainer.appendChild(newTable);
+
+    // Show the result section if it's hidden
+    document.querySelector(".maintable").style.display = "block";
+
+    // Hide the form after submitting
+    document.querySelector(".form-table").style.display = "none";
+
+    // Reset the form fields and person inputs
+    document.getElementById("title").value = "";
+    document.getElementById("amount").value = "";
+
+    // Clear dynamic people inputs
+    const personRows = document.querySelectorAll(".person-row");
+    personRows.forEach(row => row.remove());
+
+    // Reset person count
+    personCount = 0;
+
+    // Update the total people and expense after submitting the form
+    updateTotalPeople();
+    updateTotalExpense();
+}
+
+
+// Mark as "Paid" when clicking status text
+function markPaidText(element) {
+    let row = element.closest("tr");
+    let checkbox = row.querySelector(".status-checkbox");
+    let dateCell = row.querySelector(".payment-date");
+
+    element.textContent = "Paid";
+    element.classList.remove("pending");
+    element.classList.add("paid");
+    checkbox.checked = true;
+    checkbox.disabled = true;
+    dateCell.textContent = new Date().toLocaleDateString(); // Correctly updates the date column
+}
+
+// Mark as "Paid" when clicking checkbox
+function markPaid(element) {
+    let row = element.closest("tr");
+    let statusText = row.querySelector(".status");
+    let dateCell = row.querySelector(".payment-date");
+
+    statusText.textContent = "Paid";
+    statusText.classList.remove("pending");
+    statusText.classList.add("paid");
+    element.checked = true;
+    element.disabled = true;
+    dateCell.textContent = new Date().toLocaleDateString(); // Correctly updates the date column
+}
+
+// Show form when clicking "Create Expense"
+document.querySelector(".create-expense").addEventListener("click", function () {
+    document.querySelector(".form-table").style.display = "block";
+});
+
+// Close form when clicking the close icon
+document.querySelector(".close-icon").addEventListener("click", function () {
+    document.querySelector(".form-table").style.display = "none";
+});
+
+</script>
+
+</body>
+
+</html>
