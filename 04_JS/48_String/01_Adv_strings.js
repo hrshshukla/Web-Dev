@@ -14,6 +14,7 @@
     let BroName = "Adarsh"
     console.log(BroName.slice(2)); // Output : arsh
     console.log(BroName.slice(2,4)); // Output : ar     slice( [start], [end-1] ) ----->RAW : slice (2,4) = Final : slice (2,3)
+    console.log(BroName.slice(-2))
 
 
 
