@@ -117,10 +117,17 @@ const playSong = (songName, pause = false) => {
 
 async function main() {
     // Get songs list
-    allSongs = await getSongs("songs/Unstopable")
-    playSong(allSongs[0], true)
+    await displayAlbums();
 
-    displayAlbums()
+       // Select the first album card, if available
+       let firstCard = document.querySelector(".card");
+       if (firstCard) {
+           // Construct the folder path. For example, if data-foldername="album1", then folder becomes "songs/album1"
+           let folder = "songs/" + firstCard.dataset.foldername;
+           allSongs = await getSongs(folder);
+           playSong(allSongs[0], true);
+       }
+
 }
 
 // Display all albums inside the songs folders 

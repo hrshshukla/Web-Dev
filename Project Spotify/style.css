@@ -164,12 +164,17 @@ body {
 }
 .card .play {
     position: absolute;
-    top: 49%;
+    top: 70%;
     right: 6%;
     width: 50px;
-    transition: all 1s ease-out;
+    opacity: 0;
+    transition:top 0.5s ease-out, opacity 0.5s ease-out;
 }
 
+.card:hover .play {
+    top: 55%;
+    opacity: 1;
+}
 
 .buttons {
     display: flex;
