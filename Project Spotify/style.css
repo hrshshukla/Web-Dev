@@ -164,7 +164,7 @@ body {
 }
 .card .play {
     position: absolute;
-    top: 70%;
+    top: 65%;
     right: 6%;
     width: 50px;
     opacity: 0;

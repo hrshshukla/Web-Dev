@@ -25,11 +25,14 @@ async function getSongs(folder) {
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
     songUL.innerHTML = ""
     for (const song of allSongs) {
+        let songName = song.replaceAll("%20", " ").split("-")[0]
+        let artistName = song.replaceAll("%20", " ").replaceAll(".mp3", "").split("-")[1]
+        let correctArtistName = artistName ? artistName : "Harsh"
         songUL.innerHTML += ` <li>
                                 <img class="invert" src="Images/music.svg" alt="">
                                 <div class="info">
-                                    <div class="songName">${song.replaceAll("%20", " ")}</div>
-                                    <div class="songArtist" >Song Artist</div>
+                                    <div class="songName">${songName}</div>
+                                    <div class="songArtist" >${correctArtistName}</div>
                                 </div>
     
                                 <div class="playNow">
@@ -45,6 +48,7 @@ async function getSongs(folder) {
     li_InSonglist.forEach(li => {
         li.addEventListener("click", () => {
             let clickedSongName = li.querySelector(".info .songName").innerText.trim();
+
             // If the clicked song is the same as the current song, toggle play/pause
             if (clickedSongName === currentSongName) {
                 if (currentSong.paused) {
@@ -250,26 +254,48 @@ close.addEventListener("click", () => {
     left.style.left = "-110%";
 })
 
+// M-------------------------------------------------------------------------M
 
-// Add an event listener to previous
+// event listener for Previous Song: when manually tapped by mouse cursor 
 previous.addEventListener("click", () => {
-    let currentSongIndex = allSongs.indexOf(currentSong.src.split("/").slice(-1)[0])
-    currentSong.pause()
-    if ((currentSongIndex - 1) >= 0) {
-        playSong(allSongs[currentSongIndex - 1])
-    }
-})
+    handlePrevious();
+});
 
-
-// Add an event listener to next
+// event listener for Next Song: when manually tapped by mouse cursor 
 next.addEventListener("click", () => {
-    currentSong.pause()
+    handleNext();
+});
 
-    let currentSongIndex = allSongs.indexOf(currentSong.src.split("/").slice(-1)[0])
-    if ((currentSongIndex + 1) < allSongs.length) {
-        playSong(allSongs[currentSongIndex + 1])
+// event listener for Next & Previous Song when ArrowLeft and ArrowRight key is pressed
+document.addEventListener("keydown", function(event) {
+    if (event.code === "ArrowLeft") {
+        event.preventDefault(); // Prevent any default behavior
+        handlePrevious();
+    } else if (event.code === "ArrowRight") {
+        event.preventDefault(); // Prevent any default behavior
+        handleNext();
     }
-})
+});
+
+// Helper function to handle previous song logic
+function handlePrevious() {
+    let currentSongIndex = allSongs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    currentSong.pause();
+    if (currentSongIndex - 1 >= 0) {
+        playSong(allSongs[currentSongIndex - 1]);
+    }
+}
+
+// Helper function to handle next song logic
+function handleNext() {
+    currentSong.pause();
+    let currentSongIndex = allSongs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if (currentSongIndex + 1 < allSongs.length) {
+        playSong(allSongs[currentSongIndex + 1]);
+    }
+}
+
+// W-------------------------------------------------------------------------W
 
 // eventlistner for volume Bar
 let volumeBar = document.querySelector(".volumeBar")
@@ -308,6 +334,60 @@ const updateSeekbar = () => {
     seekbar.style.setProperty("--progress", `${progress}%`);
     seekbar.value = progress;
 };
+
+// New code: Listen for spacebar key to toggle play/pause
+document.addEventListener("keydown", function(event) {
+    if (event.code === "Space") {
+        event.preventDefault();  // Prevent default spacebar behavior (like scrolling)
+        if (currentSong.paused) {
+            currentSong.play();
+
+            play.src = "Images/pauseBar.svg";
+            // Update the corresponding "playNow" icon in the song list
+            document.querySelectorAll(".songList li").forEach(li => {
+                let songTitle = li.querySelector(".info .songName").innerText.trim();
+                if (songTitle === currentSongName.trim()) {
+                    li.querySelector(".playNow img").src = "Images/pause.svg";
+                }
+            });
+        } else {
+            currentSong.pause();
+            play.src = "Images/playBar.svg";
+            // Update the corresponding "playNow" icon in the song list
+            document.querySelectorAll(".songList li").forEach(li => {
+                let songTitle = li.querySelector(".info .songName").innerText.trim();
+                if (songTitle === currentSongName.trim()) {
+                    li.querySelector(".playNow img").src = "Images/play.svg";
+                }
+            });
+        }
+    }
+});
+
+// eventlistner for volume control keys (ArrowUp/AudioVolumeUp and ArrowDown/AudioVolumeDown)
+document.addEventListener("keydown", function(event) {
+    event.preventDefault();  // Prevent default scrolling behavior
+
+    if (event.code === "ArrowUp" || event.code === "AudioVolumeUp") {
+        // Increase volume by 10%, ensuring it doesn't exceed 100%
+        let currentVolume = parseInt(volumeBar.value, 10) || 0;
+        let newVolume = Math.min(100, currentVolume + 10);
+        volumeBar.value = newVolume;
+        currentSong.volume = newVolume / 100;
+        updateVolumeBar();
+    } 
+    
+    else if (event.code === "ArrowDown" || event.code === "AudioVolumeDown" ) {
+        // Decrease volume by 10%, ensuring it doesn't go below 0%
+        let currentVolume = parseInt(volumeBar.value, 10) || 0;
+        let newVolume = Math.max(0, currentVolume - 10);
+        volumeBar.value = newVolume;
+        currentSong.volume = newVolume / 100;
+        updateVolumeBar();
+    }
+});
+
+
 
 main()
 
