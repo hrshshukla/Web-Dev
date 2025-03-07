@@ -4,7 +4,7 @@ var currentSongName = "";
 
 async function getSongs(folder) {
     currentFolder = folder;
-    let songsFile = await fetch(`http://192.168.43.184:3000/${folder}/`)
+    let songsFile = await fetch(`http://127.0.0.1:3000/${folder}/`)
     let songText = await songsFile.text()
 
     let div = document.createElement("div")
@@ -25,10 +25,10 @@ async function getSongs(folder) {
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0]
     songUL.innerHTML = ""
     for (const song of allSongs) {
-        let songName = song.replaceAll("%20", " ").split("-")[0]
+        let songName = song.replaceAll("%20", " ").replaceAll(".mp3", "").split("-")[0]
         let artistName = song.replaceAll("%20", " ").replaceAll(".mp3", "").split("-")[1]
         let correctArtistName = artistName ? artistName : "Harsh"
-        songUL.innerHTML += ` <li>
+        songUL.innerHTML += ` <li data-fullname="${song.replaceAll("%20", " ")}" >
                                 <img class="invert" src="Images/music.svg" alt="">
                                 <div class="info">
                                     <div class="songName">${songName}</div>
@@ -47,7 +47,7 @@ async function getSongs(folder) {
     // Checking which song is being clicked 
     li_InSonglist.forEach(li => {
         li.addEventListener("click", () => {
-            let clickedSongName = li.querySelector(".info .songName").innerText.trim();
+            let clickedSongName = li.getAttribute("data-fullname").trim();
 
             // If the clicked song is the same as the current song, toggle play/pause
             if (clickedSongName === currentSongName) {
@@ -99,7 +99,7 @@ const playSong = (songName, pause = false) => {
         play.src = "Images/pauseBar.svg"
     }
 
-    document.querySelector(".songinfo").innerHTML = decodeURI(songName)
+    document.querySelector(".songinfo").innerHTML = decodeURI(songName).replaceAll(".mp3","")
     document.querySelector(".songtime").innerHTML = "00:00 | 00:00"
 
       // Resetting all .playNow icons to play.svg
@@ -136,7 +136,7 @@ async function main() {
 
 // Display all albums inside the songs folders 
 async function displayAlbums() {
-    let songsFolder = await fetch(`http://192.168.43.184:3000/songs/`)
+    let songsFolder = await fetch(`http://127.0.0.1:3000/songs/`)
     let songsFolderText = await songsFolder.text()
 
     let div = document.createElement("div")
@@ -154,7 +154,7 @@ async function displayAlbums() {
             let folder = anchor.href.split("/").slice(-2)[0]
 
             // Now Get the metadata of the folder, going to fetch info.json of each folder 
-            let extractFolder = await fetch(`http://192.168.43.184:3000/songs/${folder}/info.json`)
+            let extractFolder = await fetch(`http://127.0.0.1:3000/songs/${folder}/info.json`)
             let folderJson = await extractFolder.json()
 
             cardContainer.innerHTML += `<div data-foldername="${folder}" class="card">
@@ -280,17 +280,18 @@ document.addEventListener("keydown", function(event) {
 // Helper function to handle previous song logic
 function handlePrevious() {
     let currentSongIndex = allSongs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-    currentSong.pause();
+    
     if (currentSongIndex - 1 >= 0) {
+        currentSong.pause(); //  // Only change the song if there is one after the current that song
         playSong(allSongs[currentSongIndex - 1]);
     }
 }
 
 // Helper function to handle next song logic
 function handleNext() {
-    currentSong.pause();
     let currentSongIndex = allSongs.indexOf(currentSong.src.split("/").slice(-1)[0]);
     if (currentSongIndex + 1 < allSongs.length) {
+        currentSong.pause();
         playSong(allSongs[currentSongIndex + 1]);
     }
 }
@@ -371,7 +372,7 @@ document.addEventListener("keydown", function(event) {
     if (event.code === "ArrowUp" || event.code === "AudioVolumeUp") {
         // Increase volume by 10%, ensuring it doesn't exceed 100%
         let currentVolume = parseInt(volumeBar.value, 10) || 0;
-        let newVolume = Math.min(100, currentVolume + 10);
+        let newVolume = Math.min(100, currentVolume + 2);
         volumeBar.value = newVolume;
         currentSong.volume = newVolume / 100;
         updateVolumeBar();
@@ -380,7 +381,7 @@ document.addEventListener("keydown", function(event) {
     else if (event.code === "ArrowDown" || event.code === "AudioVolumeDown" ) {
         // Decrease volume by 10%, ensuring it doesn't go below 0%
         let currentVolume = parseInt(volumeBar.value, 10) || 0;
-        let newVolume = Math.max(0, currentVolume - 10);
+        let newVolume = Math.max(0, currentVolume - 2);
         volumeBar.value = newVolume;
         currentSong.volume = newVolume / 100;
         updateVolumeBar();
