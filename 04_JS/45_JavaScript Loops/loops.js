@@ -1,7 +1,3 @@
-for (let i = 1; i <= 10; i++) { 
-    console.log(i);
-}
-
 // _________________________________________________________________________________________________________
 
 //_for-in_loop
@@ -14,7 +10,6 @@ let Details={               // let obj = {
 // Here [Name, Batch, Year] are the key
 
 for (const key in Details) {
-    console.log(Details); // { Name: 'Harsh', Batch: 'BCA', Year: '1st Year' }
     console.log(key); // Output : Name  Batch   Year
 
     const element = Details[key]; // obj[key] means values of [keys] inside the [obj]

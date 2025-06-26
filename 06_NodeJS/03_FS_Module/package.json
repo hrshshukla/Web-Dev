@@ -1,0 +1,21 @@
+{
+  "name": "web-dev",
+  "version": "1.0.0",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrshshukla/Web-Dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrshshukla/Web-Dev/issues"
+  },
+  "homepage": "https://github.com/hrshshukla/Web-Dev#readme",
+  "description": ""
+}

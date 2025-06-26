@@ -8,7 +8,7 @@ const person = {
     age: 20,
     gender: "Male",
     occupation: "Student",
-    hobbies: ["Football", "Coding", "Gaming"],
+    hobbies: ["Sitting Free"],
 
     // Here contact{} is a object inside a object called Person{}
     contact: { 
@@ -19,3 +19,4 @@ const person = {
 
 console.log(typeof(person.gender)); // Output : string
 console.log(typeof(person.contact)); // Output : object
+console.log(typeof(person.contact.email)); // Output : string

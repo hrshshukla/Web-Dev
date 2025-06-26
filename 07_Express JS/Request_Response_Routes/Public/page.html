@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Youre inside HTML file</h1>
+    <script>
+        async function text() {
+            let a = await fetch('/', {method : "POST"})
+            let b = await a.text()
+
+            let div = document.createElement('div')
+            div.textContent = b
+            
+            document.body.appendChild(div)
+            console.log(b);
+        }
+
+        text()
+    </script>
+</body>
+</html>

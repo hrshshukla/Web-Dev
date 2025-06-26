@@ -1,0 +1,16 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Link Example</title>
+  </head>
+  <body>
+    <a href="https://www.spotify.com/jp/accessibility/">Spotify</a>
+
+    <script>
+      let element = document.getElementsByTagName("a");
+      console.log(element);            // HTMLCollection
+      console.log(element[0].href);    // Actual link URL
+    </script>
+  </body>
+</html>

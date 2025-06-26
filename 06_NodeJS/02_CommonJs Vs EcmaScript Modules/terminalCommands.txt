@@ -1,0 +1,12 @@
+fast way to create a [package.json]
+
+Usual way : intit i
+fast way : intit i -y 
+// here [-y] means "yes" to all questions
+__________________________________________
+
+Tip : if you want, that everytime when you add new code then, your server gets refreshed automatically.
+      then install nodemon [package] as global [--global] or [-g]
+      Now, as we want this automatic refresh feature everywhere in our PC so we will install it globally by [--global] or [-g]
+      command : npm i --global nodemon
+      shortcut: npm i -g nodemon

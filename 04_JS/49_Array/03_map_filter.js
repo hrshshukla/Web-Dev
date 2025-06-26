@@ -1,4 +1,3 @@
-// I lost one part of my life today, may GOD help me to get that again.
 
 
 let old_arr = [1, 2, 3, 4, 5, 6]

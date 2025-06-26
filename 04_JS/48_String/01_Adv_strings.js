@@ -14,7 +14,7 @@
     let BroName = "Adarsh"
     console.log(BroName.slice(2)); // Output : arsh
     console.log(BroName.slice(2,4)); // Output : ar     slice( [start], [end-1] ) ----->RAW : slice (2,4) = Final : slice (2,3)
-    console.log(BroName.slice(-2))
+    console.log(BroName.slice(-2)) // sh
 
 
 
@@ -24,15 +24,14 @@
     console.log(MomName); // MomName = "Pratima"
 
     console.log(MomName.concat(BroName, "successfully concatinated!!"));
-    console.log("MomName");
+    console.log(MomName);
 
 
 
-// Remove white space ---> trim()
+// Remove blank space ---> trim()
     let fatherName = "  Ayodhya   "
     console.log(fatherName);        // Output : [  Ayodhya   ]
     console.log(fatherName.trim()); // Output : [Ayodhya]
-
 
 
 // Index 

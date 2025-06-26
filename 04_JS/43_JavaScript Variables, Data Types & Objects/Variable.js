@@ -38,3 +38,4 @@ console.log(obj); // {name: 'Harsh', college: 'VITS'}
 
 obj.branch = "bca";
 console.log(obj); // {name: 'Harsh', college: 'VITS', branch: 'bca'}
+

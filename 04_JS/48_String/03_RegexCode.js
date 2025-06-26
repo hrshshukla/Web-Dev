@@ -11,7 +11,7 @@ Example :
 (1) \d : matches digit
 -- Output : '1'
 
-(2) \d+ : Matches digit And "+" Matches one or more times  
+(2) \d+ : Matches digit And "+" Matches  more than one times  
 -- Output : '1000'
 
 (3) \d+/g : matches digits, And "+" Matches one or more times, And "g" keeps searching after the first match and return Array[]

@@ -1,0 +1,13 @@
+Problem 1:
+
+As we know that when we name a html file (index.html)
+Then, if that directory is opened in the browser, The browser automatically detects the (index.html) and opens it
+
+Now the problem is (index.html) disturbs the fetch process 
+Means, if your html file name = (Anything.html)
+Then, from that directory you can move back and forth and access file in that directory 
+
+Whereas, if your html file name = (index.html)
+Then, from that directory you cannot move back and forth and access file in that directory
+
+Problem 2:

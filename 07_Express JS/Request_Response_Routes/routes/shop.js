@@ -1,0 +1,18 @@
+// Go to 07_reponse.js and run the server
+import express from "express";
+
+const router = express.Router()
+
+// this will handle : 127.0.0.1:3000/shop
+router.get('/', (req, res)=>{
+    res.send("This is main gate of shop")
+})
+
+// this will handle : 127.0.0.1:3000/shop/about
+router.get('/about', (req, res)=>{
+    res.send("About shop")
+})
+
+
+// module.exports = router --> commonJS
+export default router;

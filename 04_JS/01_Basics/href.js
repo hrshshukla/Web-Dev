@@ -1,7 +1,7 @@
-<a href="https://www.spotify.com/jp/accessibility/"></a>
+let element = document.getElementsByTagName("a");
 
 console.log(element);  
-// Output :  <a href="https://www.spotify.com/jp/accessibility/"></a>
+// Output: HTMLCollection with all <a> elements
 
-console.log(element.href);
-// Output : https://www.spotify.com/jp/accessibility/
+console.log(element[0].href);
+// Output: https://www.spotify.com/jp/accessibility/

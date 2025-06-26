@@ -2,8 +2,8 @@
 //            --- 3 + undefined = Nan
 
 
-function greeting(naam) {
-    console.log("Hello " + naam);
+function greeting(Name) {
+    console.log("Hello " + Name);
 }
 greeting("Harsh") // Output: Hello Harsh
 //_________________________________________________________________________

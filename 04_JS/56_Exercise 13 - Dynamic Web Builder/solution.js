@@ -1,30 +1,40 @@
 // there could be another version of this answer :
 // -- like we can target the elements by there class and chnge the [innerText] inside them  
 
-function DynamicWebBuilder(videoNumber, title, ChannelName, Views, TimeOld, duration, thumbnail ) {
-    var finalViews
+let count = 1
+let container = document.querySelector(".container")
 
-    Views<1000? finalViews=Views :  Views<1000000? finalViews = Views/1000 + "K" :  finalViews= Views/1000000 + "M";
-
-    var html = `<div class="card">
-        <div class="numBOX">${videoNumber}</div>
-        <div class="thumbnail">
-            <img src="${thumbnail}" alt="nothing">
-            <span class="duration">${duration}</span>
-        </div>
-        <div class="text">
-            <div class="title">${title}</div>
-            <div class="detail">
-                <span class="channelName">${ChannelName}</span> &bull;
-                <span class="views">${finalViews} views</span>  &bull;
-                <span class="Time">${TimeOld} year ago</span>
-            </div>
-        </div>
-    </div>`
-    
-    document.body.innerHTML += html
+// Helper function
+function getViews(views) {
+    if (views < 1000) {
+        return views
+    }
+    else if (views < 1000000) {
+        return views/1000 + "K"
+    }
+    else if(views >= 1000000){
+        return views/1000000 + "M"
+    }
 }
 
-DynamicWebBuilder(69, "80,00,000 Views Calculated | Sigma Web Development Course - Tutorial #67",
-    "CodeWithHarry",  8000000, 1, "18:56", "solution.png"
-)
+// Main Function
+function createCard (title, cName, views, monthsold, duration, thumbnail){
+    const Views = getViews(views)
+    
+    container.innerHTML += `<div class="card">
+            <div class="number">${count}</div>
+            <div class="thumbnail">
+                <img src=${thumbnail} alt="oops!">
+                <span class="duration">${duration}</span>
+            </div>
+            <div class="details">
+                <div class="title">${title}</div>
+                <div class="meta"> ${cName} • ${Views} views • ${monthsold} months age</div>
+            </div>
+        </div>`
+
+    count++
+}
+
+createCard("Introduction to Backend | Sigma Web Dev video #2", "CodeWithHarry",
+5600000, 7, "31:22", "thumbnail.png")

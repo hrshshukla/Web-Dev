@@ -5,7 +5,15 @@
 
 let String = "Harsh"
 let Variable = String.split("") // Now [Variable] becomes Array[] 
+    console.log(Variable + typeof(Variable));
+    
     Variable = String.split("").reverse() // Here, Variable is still Array[]
+    console.log(Variable + typeof(Variable));
+    
     Variable = String.split("").reverse().join("") // But Now, again Variable became "string"
+    console.log(Variable + typeof(Variable));
 
-console.log(array);
+    Variable = String.reverse();
+    console.log(Variable);
+    
+

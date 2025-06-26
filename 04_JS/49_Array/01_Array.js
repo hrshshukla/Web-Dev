@@ -17,6 +17,7 @@ let str = (arr.toString()); // right way ---> 899,2,3,4,9
 console.log(str);
 
 
+
 // join 
  console.log(arr.join(" + ")); // Now arr will look like this : 899 + 2 + 3 + 4 + 9 <--- also converted into string 
  

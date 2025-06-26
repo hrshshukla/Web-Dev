@@ -18,11 +18,10 @@ let obj = {
     b : 2, 
     c : 3
 }
+
 for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) { //---> this code ensure that only relevant data to come inside not the data inherited 
         const element = obj[key];
         console.log(element); // 1 2 3 
-    }
 }
 
 // for-of
